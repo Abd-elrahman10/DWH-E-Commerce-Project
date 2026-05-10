@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-U8TQGK1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeb3/YwhV70qGyDHqcC95GQAAAAACAAAAAAAQZgAAAAEAACAAAADCCQyFzOys2OwEszQWr3vw6gk2iFCiShhiQ7nJBZR/wwAAAAAOgAAAAAIAACAAAAB9nVmFPvLsQY/njvbbn9VQCtw78uKpWQVO4VzTu8BsIpAAAADbOdTAXds9m4yodxHHPtf7A/wOF0kWwCmSKgm4lyXazZ7SfEdhPxZWTx9c9Sg2hwz3nBr2g1j0lzuyV+I1FSkvE0ZhmZTz13yZIm7N7Pwkm7eXYzo0kEPob+4hpe84cJxOK+6zW/BO+rHaCU1QKPqyRNXU4UZ1pKuThrN3OljDs1UqGXl+4LHH7Mtvj/oaAexAAAAArL7NeqCoRHM/3Wy+ktA9cgJ0IejdBYlHWWEyU0FhG7ZRD5TAKDohefwEVj1Bqsgt9wUSSRe7WUcxz4FIb6oT2A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbKh7l5OcHE2Gqml7Ws3DEwAAAAACAAAAAAAQZgAAAAEAACAAAADTldyMuj3QwFHAXCrq8dFuqgMSwtPGPc6Cc32k4q1AMgAAAAAOgAAAAAIAACAAAABMNwlgDPKjvyrnDmq/o3Bap3qadYQUIzjLniBXRykrP5AAAACVRVnxl8i0HfBDnsUqvueNbWZnp9wJQt7WUGv8TtJjrVVyQtYnCfg310xORERgt60EfL107s58Yslc2LIaViOUuOJYaPInhz+0HudJikX3HkYUBe1alXc1jjrUoIAH6Id0hXaaYNefe4HMAkldZIDZ8cLFSKt03IDIS2+AACetGZerG6ecfTxQ7D/FWKPkQEVAAAAAhKF8i9qA4KNMqbdugqdIiYzfXnC7SPSUFvVoZy3Q2K72rjG/KjjZa+h+79d0qAUeGrNzcHXrW422MwKa4lTONQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Staging</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E431154D-21CF-450E-B060-E25C468B01DE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B438EF9E-6B59-49B8-9668-8B8A32A345DC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -78,7 +78,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-U8TQGK1;Initial Catalog=OnlineShop_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Staging-{F57070E0-FFCD-49BB-B42F-C77F591153FA}DESKTOP-U8TQGK1.OnlineShop_Source;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=OnlineShop_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{F57070E0-FFCD-49BB-B42F-C77F591153FA}DESKTOP-U8TQGK1.OnlineShop_Source;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -182,7 +182,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">DESKTOP-U8TQGK1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -226,7 +226,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-U8TQGK1;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{B8697F50-C822-4815-8F93-C771BE72F22C}DESKTOP-U8TQGK1.OnlineShop_STG;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{B8697F50-C822-4815-8F93-C771BE72F22C}DESKTOP-U8TQGK1.OnlineShop_STG;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -330,7 +330,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">DESKTOP-U8TQGK1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
