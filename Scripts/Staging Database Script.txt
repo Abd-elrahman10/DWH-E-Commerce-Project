@@ -1,0 +1,82 @@
+-- Create the Staging Database
+CREATE DATABASE OnlineShop_STG;
+GO
+
+USE OnlineShop_STG;
+GO
+
+-- 1. Customer Staging Table
+CREATE TABLE Customer_STG (
+    CustomerID INT,
+    First_name NVARCHAR(255),
+    Last_name NVARCHAR(255),
+    Address NVARCHAR(500),
+    Email NVARCHAR(255),
+    Phone_number NVARCHAR(50)
+);
+
+-- 2. Supplier Staging Table
+CREATE TABLE Supplier_STG (
+    SupplierID INT,
+    Supplier_Name NVARCHAR(255),
+    Contact_Name NVARCHAR(255),
+    Address NVARCHAR(500),
+    Phone_Number NVARCHAR(50),
+    Email NVARCHAR(255)
+);
+
+-- 3. Product Staging Table
+CREATE TABLE Product_STG (
+    ProductID INT,
+    Product_name NVARCHAR(255),
+    Category NVARCHAR(255),
+    Price DECIMAL(18,2),
+    SupplierID INT
+);
+
+-- 4. Review Staging Table
+CREATE TABLE Review_STG (
+    ReviewID INT,
+    ProductID INT,
+    CustomerID INT,
+    Rating INT,
+    Review_Text NVARCHAR(MAX),
+    Review_Date DATE
+);
+
+-- 5. Order Staging Table
+CREATE TABLE Order_STG (
+    OrderID INT,
+    Order_Date DATE,
+    CustomerID INT,
+    Total_Price DECIMAL(18,2)
+);
+
+-- 6. OrderItem Staging Table
+CREATE TABLE OrderItem_STG (
+    Order_item_id INT,
+    OrderID INT,
+    ProductID INT,
+    Quantity INT,
+    price_at_purchase DECIMAL(18,2)
+);
+
+-- 7. Payment Staging Table
+CREATE TABLE Payment_STG (
+    Payment_id INT,
+    OrderID INT,
+    Payment_method NVARCHAR(100),
+    Amount DECIMAL(18,2),
+    Transaction_status NVARCHAR(100)
+);
+
+-- 8. Shipment Staging Table
+CREATE TABLE Shipment_STG (
+    ShipmentID INT,
+    OrderID INT,
+    Shipment_Date DATE,
+    Carrier NVARCHAR(255),
+    Tracking_Number NVARCHAR(255),
+    Delivery_Date DATE,
+    Shipment_Status NVARCHAR(100)
+);

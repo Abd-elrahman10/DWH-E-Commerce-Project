@@ -1,0 +1,104 @@
+-- Create the Database
+CREATE DATABASE OnlineShop_Source;
+GO
+
+USE OnlineShop_Source;
+GO
+
+-- 1. Create Independent Tables (No Foreign Keys)
+
+CREATE TABLE Customer (
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+    [First name] NVARCHAR(10) NOT NULL,
+    [Last name] NVARCHAR(10) NOT NULL,
+    Address NVARCHAR(100),
+    Email NVARCHAR(70) UNIQUE, 
+    [Phone number] NVARCHAR(20)
+);
+GO
+
+CREATE TABLE Supplier (
+    SupplierID INT IDENTITY(501,1) PRIMARY KEY,
+    [Supplier Name] NVARCHAR(100) NOT NULL,
+    [Contact Name] NVARCHAR(100),
+    Address NVARCHAR(100),
+    [Phone Number] NVARCHAR(20),
+    Email NVARCHAR(100)
+);
+GO
+
+-- 2. Create Level 1 Dependent Tables
+
+CREATE TABLE Product (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    [Product name] NVARCHAR(100) NOT NULL,
+    Category NVARCHAR(100),
+    Price DECIMAL(18,2) CHECK (Price >= 0), 
+    SupplierID INT,
+    CONSTRAINT FK_Product_Supplier FOREIGN KEY (SupplierID) 
+        REFERENCES Supplier(SupplierID) ON DELETE SET NULL
+);
+GO
+
+-- Note: 'Order' is a reserved keyword in SQL, so it must be wrapped in brackets [Order]
+CREATE TABLE [Order] (
+    OrderID INT IDENTITY(1,1) PRIMARY KEY,
+    [Order Date] DATE DEFAULT GETDATE(),
+    CustomerID INT NOT NULL,
+    [Total Price] DECIMAL(18,2) CHECK ([Total Price] >= 0),
+    CONSTRAINT FK_Order_Customer FOREIGN KEY (CustomerID) 
+        REFERENCES Customer(CustomerID) ON DELETE CASCADE
+);
+GO
+
+-- 3. Create Level 2 Dependent Tables (Depend on Order and/or Product)
+
+CREATE TABLE Review (
+    ReviewID INT IDENTITY(1,1) PRIMARY KEY,
+    [Product ID] INT NOT NULL,
+    [Customer ID] INT NOT NULL,
+    Rating INT CHECK (Rating BETWEEN 1 AND 5), 
+    [Review Text] NVARCHAR(MAX),
+    [Review Date] DATE DEFAULT GETDATE(),
+    CONSTRAINT FK_Review_Product FOREIGN KEY ([Product ID]) 
+        REFERENCES Product(ProductID) ON DELETE CASCADE,
+    CONSTRAINT FK_Review_Customer FOREIGN KEY ([Customer ID]) 
+        REFERENCES Customer(CustomerID) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE OrderItem (
+    Order_item_id INT IDENTITY(1,1) PRIMARY KEY,
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    Quantity INT NOT NULL CHECK (Quantity > 0), -- Quantity must be at least 1
+    price_at_purchase DECIMAL(18,2) CHECK (price_at_purchase >= 0),
+    CONSTRAINT FK_OrderItem_Order FOREIGN KEY (OrderID) 
+        REFERENCES [Order](OrderID) ON DELETE CASCADE,
+    CONSTRAINT FK_OrderItem_Product FOREIGN KEY (ProductID) 
+        REFERENCES Product(ProductID)
+);
+GO
+
+CREATE TABLE Payment (
+    OrderID INT PRIMARY KEY, -- No identity here, it must match an OrderID
+    Payment_method NVARCHAR(50) NOT NULL,
+    Amount DECIMAL(18, 2) NOT NULL,
+    Transaction_status NVARCHAR(50) DEFAULT 'Pending',
+    CONSTRAINT FK_Payment_Order FOREIGN KEY (OrderID) 
+        REFERENCES [Order](OrderID) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Shipment (
+    ShipmentID INT IDENTITY(1,1) PRIMARY KEY,
+    OrderID INT NOT NULL,
+    [Shipment Date] DATE,
+    Carrier NVARCHAR(100),
+    [Tracking Number] NVARCHAR(100),
+    [Delivery Date] date default getdate(), 
+    [Shipment Status] NVARCHAR(50),
+    CONSTRAINT FK_Shipment_Order FOREIGN KEY (OrderID) 
+        REFERENCES [Order](OrderID) ON DELETE CASCADE
+);
+GO
