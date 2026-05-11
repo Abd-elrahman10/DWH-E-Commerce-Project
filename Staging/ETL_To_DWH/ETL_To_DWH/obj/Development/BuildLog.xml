@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
-    <Name>ETL_To_Staging_Area</Name>
-    <LastWriteTime>2026-05-10T15:55:17.8242956Z</LastWriteTime>
+    <Name>ETL_To_DWH</Name>
+    <LastWriteTime>2026-05-10T19:43:10.0906693Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Staging.dtsx</Name>
-      <LastWriteTime>2026-05-10T20:07:51.3398112Z</LastWriteTime>
+      <Name>DWHing.dtsx</Name>
+      <LastWriteTime>2026-05-11T03:06:18.6523783Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
