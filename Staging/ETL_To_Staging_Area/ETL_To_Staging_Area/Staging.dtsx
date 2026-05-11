@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{F57070E0-FFCD-49BB-B42F-C77F591153FA}DESKTOP-U8TQGK1.OnlineShop_Source;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=OnlineShop_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{F57070E0-FFCD-49BB-B42F-C77F591153FA}DESKTOP-U8TQGK1.OnlineShop_Source;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{B8697F50-C822-4815-8F93-C771BE72F22C}DESKTOP-U8TQGK1.OnlineShop_STG;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{B8697F50-C822-4815-8F93-C771BE72F22C}DESKTOP-U8TQGK1.OnlineShop_STG;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
