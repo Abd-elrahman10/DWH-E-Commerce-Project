@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-U8TQGK1\Abd-ElRahman"
   DTS:DTSID="{4BD4E811-A230-48FF-A331-26AC94E9A866}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
-  DTS:LocaleID="3072"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
   DTS:ObjectName="Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{605EE0AE-71CD-4FE4-B4A9-6833A35D1223}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{12C63D33-515D-4431-AD27-223DC093EA0E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-U8TQGK1;Initial Catalog=OnlineShop_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Staging-{F57070E0-FFCD-49BB-B42F-C77F591153FA}DESKTOP-U8TQGK1.OnlineShop_Source;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_Source;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{F57070E0-FFCD-49BB-B42F-C77F591153FA}DESKTOP-U8TQGK1.OnlineShop_Source;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-U8TQGK1;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{B8697F50-C822-4815-8F93-C771BE72F22C}DESKTOP-U8TQGK1.OnlineShop_STG;" />
+          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Staging-{B8697F50-C822-4815-8F93-C771BE72F22C}DESKTOP-U8TQGK1.OnlineShop_STG;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -2217,11 +2217,29 @@
                           externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReviewID]"
                           lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReviewID]" />
                         <inputColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Product ID]"
+                          cachedDataType="i4"
+                          cachedName="Product ID"
+                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
+                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product ID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Customer ID]"
+                          cachedDataType="i4"
+                          cachedName="Customer ID"
+                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Customer_ID]"
+                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer ID]" />
+                        <inputColumn
                           refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rating]"
                           cachedDataType="i4"
                           cachedName="Rating"
                           externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                           lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rating]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Review Text]"
+                          cachedDataType="nText"
+                          cachedName="Review Text"
+                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Review_Text]"
+                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Review Text]" />
                         <inputColumn
                           refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Review Date]"
                           cachedDataType="wstr"
@@ -2229,12 +2247,6 @@
                           cachedName="Review Date"
                           externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Review_Date]"
                           lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Review Date]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Review Text]"
-                          cachedDataType="nText"
-                          cachedName="Review Text"
-                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Review_Text]"
-                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Review Text]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3363,7 +3375,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8697F50-C822-4815-8F93-C771BE72F22C}"
-          SQLTask:SqlStatementSource="truncate table Review_STG&#xA;truncate table OrderItem_STG&#xA;truncate table Shipment_STG&#xA;truncate table Product_STG&#xA;truncate table [Order_STG]&#xA;truncate table Customer_STG&#xA;truncate table Supplier_STG&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM Review_STG;&#xA;DELETE FROM OrderItem_STG;&#xA;DELETE FROM Shipment_STG;&#xA;DELETE FROM Payment_STG;&#xA;DELETE FROM Order_STG;&#xA;DELETE FROM Product_STG;&#xA;DELETE FROM Customer_STG;&#xA;DELETE FROM Supplier_STG;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -3424,40 +3436,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="338.4,576.8"
-          Size="338.4,620"
+          PanelSize="338.4,409.6"
+          Size="338.4,452.8"
           Id="Package\Sequence Container"
-          TopLeft="250.000000532184,99.4117646187441" />
+          TopLeft="397.222214710539,212.078430501941" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="163.2,41.6"
           Id="Package\Truncate all tables"
-          TopLeft="314.285714954746,2.29411764504794" />
+          TopLeft="485.119038954158,122.183005700244" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="396.685714954746,43.8941176450479">
+          TopLeft="566.570626832348,163.783005700244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.5142855774383,55.5176469736961"
+              EndConnector="0,48.2954248016965"
               Start="0,0"
-              End="22.5142855774383,48.0176469736961">
+              End="0,40.7954248016965">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7588234868481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.7588234868481"
-                    Point2="0,27.7588234868481"
-                    Point3="4,27.7588234868481" />
-                  <mssgle:LineSegment
-                    End="18.5142855774383,27.7588234868481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5142855774383,27.7588234868481"
-                    Point2="22.5142855774383,27.7588234868481"
-                    Point3="22.5142855774383,31.7588234868481" />
-                  <mssgle:LineSegment
-                    End="22.5142855774383,48.0176469736961" />
+                    End="0,40.7954248016965" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3473,7 +3473,7 @@
     design-time-name="Package\Sequence Container\Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Customer\OLE DB Source"
@@ -3486,6 +3486,30 @@
           Size="97.6,41.6"
           Id="Package\Sequence Container\Customer\Sort"
           TopLeft="327.142857839258,204.941176290949" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Customer.Paths[Sort Output]"
+          TopLeft="375.214286370393,246.541176290949">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3999999316296"
+              Start="0,0"
+              End="0,28.8999999316296">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8999999316296" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\Customer.Paths[OLE DB Source Output]"
           TopLeft="388.37142923894,180.776470466241">
@@ -3517,29 +3541,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\Customer.Paths[Sort Output]"
-          TopLeft="375.214286370393,246.541176290949">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.3999999316296"
-              Start="0,0"
-              End="0,28.8999999316296">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8999999316296" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3731,15 +3735,15 @@
     design-time-name="Package\Sequence Container\Payment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Sequence Container\Payment\OLE DB Destination"
-          TopLeft="472.999992951751,379.999994337559" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Payment\OLE DB Source"
           TopLeft="437.999993473291,263.999996066094" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Sequence Container\Payment\OLE DB Destination"
+          TopLeft="472.999992951751,379.999994337559" />
         <EdgeLayout
           Id="Package\Sequence Container\Payment.Paths[OLE DB Source Output]"
           TopLeft="512.799993473291,305.599996066094">
@@ -3771,7 +3775,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3807,7 +3813,7 @@
     design-time-name="Package\Sequence Container\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Sequence Container\Product\OLE DB Destination"
@@ -3847,7 +3853,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3883,7 +3891,7 @@
     design-time-name="Package\Sequence Container\Review">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Review\OLE DB Source"
@@ -3923,9 +3931,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3961,7 +3967,7 @@
     design-time-name="Package\Sequence Container\Shipment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Shipment\OLE DB Source"
@@ -3989,7 +3995,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4025,7 +4033,7 @@
     design-time-name="Package\Sequence Container\Supplier">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Supplier\OLE DB Source"
@@ -4065,7 +4073,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

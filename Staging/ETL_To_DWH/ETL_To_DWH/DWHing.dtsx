@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-U8TQGK1\Abd-ElRahman"
   DTS:DTSID="{34EF1B62-3EBF-472A-BCEE-7B482388987D}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
-  DTS:LocaleID="3072"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
   DTS:ObjectName="DWHing"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{0879600A-2855-4E2C-B504-F9FFC29924F1}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{6CA5ED03-4C38-4D7A-AFD0-D53E034D833E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-U8TQGK1;Initial Catalog=OnlineShop_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DWHing-{DEBFAE9F-E960-4E59-B46C-F87471C05190}DESKTOP-U8TQGK1.OnlineShop_DWH;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DWHing-{DEBFAE9F-E960-4E59-B46C-F87471C05190}DESKTOP-U8TQGK1.OnlineShop_DWH;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-U8TQGK1;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DWHing-{45FE636D-A908-478B-9875-303B69408899}DESKTOP-U8TQGK1.OnlineShop_STG;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DWHing-{45FE636D-A908-478B-9875-303B69408899}DESKTOP-U8TQGK1.OnlineShop_STG;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -9101,15 +9101,15 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           PanelSize="347.2,346.4"
           Size="347.2,389.6"
           Id="Package\Dimensions"
-          TopLeft="237.26530661901,92.4168065982061" />
-        <NodeLayout
-          Size="122.4,41.6"
-          Id="Package\Fact tables\FactSales"
-          TopLeft="51.2244906713074,18.4168061912416" />
+          TopLeft="112.265313448708,119.500139743205" />
         <NodeLayout
           Size="131.2,41.6"
           Id="Package\Fact tables\FactReview"
           TopLeft="69.3142864715079,164.329411330355" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Fact tables\FactSales"
+          TopLeft="51.2244906713074,18.4168061912416" />
         <NodeLayout
           Size="142.4,41.6"
           Id="Package\Fact tables\FactShipment"
@@ -9120,37 +9120,25 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           PanelSize="394.4,260.8"
           Size="394.4,304"
           Id="Package\Fact tables"
-          TopLeft="286.502041071992,620.327730590769" />
+          TopLeft="524.002028095565,166.772178189182" />
         <NodeLayout
           Size="237.6,41.6"
           Id="Package\Truncate all dimensions and Facrt"
           TopLeft="292.857143480559,0" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="410.86530661901,482.016806598206">
+          TopLeft="459.465313448708,316.536158966194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72.836734452982,138.310923992563"
+              EndConnector="64.5367146468561,0"
               Start="0,0"
-              End="72.836734452982,130.810923992563">
+              End="57.0367146468561,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.1554619962815" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,65.1554619962815"
-                    Point2="0,69.1554619962815"
-                    Point3="4,69.1554619962815" />
-                  <mssgle:LineSegment
-                    End="68.836734452982,69.1554619962815" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.836734452982,69.1554619962815"
-                    Point2="72.836734452982,69.1554619962815"
-                    Point3="72.836734452982,73.1554619962815" />
-                  <mssgle:LineSegment
-                    End="72.836734452982,130.810923992563" />
+                    End="57.0367146468561,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9161,18 +9149,30 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="411.261225049784,41.6">
+          TopLeft="411.657143480559,41.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.816806598206"
+              EndConnector="-125.791830031851,77.9001397432054"
               Start="0,0"
-              End="0,43.316806598206">
+              End="-125.791830031851,70.4001397432054">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.316806598206" />
+                    End="0,34.9500698716027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.9500698716027"
+                    Point2="0,38.9500698716027"
+                    Point3="-4,38.9500698716027" />
+                  <mssgle:LineSegment
+                    End="-121.791830031851,38.9500698716027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.791830031851,38.9500698716027"
+                    Point2="-125.791830031851,38.9500698716027"
+                    Point3="-125.791830031851,42.9500698716027" />
+                  <mssgle:LineSegment
+                    End="-125.791830031851,70.4001397432054" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10306,6 +10306,218 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Fact tables\FactReview">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Fact tables\FactReview\OnlineShop_STG"
+          TopLeft="312.142857807327,123.117646950906" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Fact tables\FactReview\LKP_Customer"
+          TopLeft="321.428572112808,194.999999829075" />
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\Fact tables\FactReview\LKP_Date"
+          TopLeft="332.142857849902,337.235293822047" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Fact tables\FactReview\LKP_Product"
+          TopLeft="322.857143544421,265.352940943879" />
+        <EdgeLayout
+          Id="Package\Fact tables\FactReview.Paths[OLE DB Source Output]"
+          TopLeft="392.585714960068,164.717646950906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.2823528781689"
+              Start="0,0"
+              End="0,22.7823528781689">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7823528781689" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output]"
+          TopLeft="393.142857828615,236.599999829075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7529411148035"
+              Start="0,0"
+              End="0,21.2529411148035">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2529411148035" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.82178305740176,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output1]"
+          TopLeft="392.900000697162,306.952940943879">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.2823528781688"
+              Start="0,0"
+              End="0,22.7823528781688">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7823528781688" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.58648893908438,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Fact tables\FactReview\FactReview"
+          TopLeft="321.428572112808,439.705881967522" />
+        <EdgeLayout
+          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output2]"
+          TopLeft="390.585714981355,378.835293822047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.8705881454746"
+              Start="0,0"
+              End="0,53.3705881454746">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.3705881454746" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.8806065727373,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactReview\LKP_Date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactReview\OnlineShop_STG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactReview\LKP_Product">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactReview\LKP_Customer">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactReview\FactReview">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Fact tables\FactSales">
     <LayoutInfo>
       <GraphLayout
@@ -10927,35 +11139,20 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactShipment\LKP_Customer">
+    design-time-name="Package\Fact tables\FactShipment\OnlineShop_STG">
     <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactShipment\LKP_JunkStatus">
+    design-time-name="Package\Fact tables\FactShipment\LKP_DeliveryDate">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -10965,7 +11162,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10978,7 +11175,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -10988,276 +11185,10 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactShipment\LKP_DeliveryDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactShipment\LKP_Shipment">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactShipment\OnlineShop_STG">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Fact tables\FactReview">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Fact tables\FactReview\OnlineShop_STG"
-          TopLeft="312.142857807327,123.117646950906" />
-        <NodeLayout
-          Size="146.4,41.6"
-          Id="Package\Fact tables\FactReview\LKP_Customer"
-          TopLeft="321.428572112808,194.999999829075" />
-        <NodeLayout
-          Size="124,41.6"
-          Id="Package\Fact tables\FactReview\LKP_Date"
-          TopLeft="332.142857849902,337.235293822047" />
-        <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\Fact tables\FactReview\LKP_Product"
-          TopLeft="322.857143544421,265.352940943879" />
-        <EdgeLayout
-          Id="Package\Fact tables\FactReview.Paths[OLE DB Source Output]"
-          TopLeft="392.585714960068,164.717646950906">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.2823528781689"
-              Start="0,0"
-              End="0,22.7823528781689">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.7823528781689" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output]"
-          TopLeft="393.142857828615,236.599999829075">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529411148035"
-              Start="0,0"
-              End="0,21.2529411148035">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.2529411148035" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.82178305740176,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output1]"
-          TopLeft="392.900000697162,306.952940943879">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.2823528781688"
-              Start="0,0"
-              End="0,22.7823528781688">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.7823528781688" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.58648893908438,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Fact tables\FactReview\FactReview"
-          TopLeft="321.428572112808,439.705881967522" />
-        <EdgeLayout
-          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output2]"
-          TopLeft="390.585714981355,378.835293822047">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.8705881454746"
-              Start="0,0"
-              End="0,53.3705881454746">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.3705881454746" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.8806065727373,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactReview\OnlineShop_STG">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactReview\LKP_Customer">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactReview\LKP_Date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactReview\LKP_Product">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact tables\FactReview\FactReview">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -11271,6 +11202,75 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactShipment\LKP_Customer">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactShipment\LKP_JunkStatus">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact tables\FactShipment\LKP_Shipment">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

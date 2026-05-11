@@ -1,0 +1,13 @@
+# Visual Studio temporary files
+.vs/
+**/.vs/
+
+# Build output temporary files
+**/obj/
+**/obj/**
+
+# User-specific files
+*.user
+*.suo
+*.dtproj.user
+desktop.ini
