@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-U8TQGK1\Abd-ElRahman"
   DTS:DTSID="{4BD4E811-A230-48FF-A331-26AC94E9A866}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
-  DTS:LocaleID="3072"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
   DTS:ObjectName="Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{B438EF9E-6B59-49B8-9668-8B8A32A345DC}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{12C63D33-515D-4431-AD27-223DC093EA0E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -143,43 +143,44 @@
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
                           cachedDataType="i4"
                           cachedName="CustomerID"
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[CustomerID]" />
                         <inputColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[First name]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="First name"
                           externalMetadataColumnId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[First_name]"
-                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[First name]" />
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[First name]" />
                         <inputColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Last name]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="Last name"
                           externalMetadataColumnId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Last_name]"
-                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last name]" />
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Last name]" />
                         <inputColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Address]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="Address"
                           externalMetadataColumnId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
-                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]" />
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Address]" />
                         <inputColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Email]"
                           cachedDataType="wstr"
                           cachedLength="70"
                           cachedName="Email"
                           externalMetadataColumnId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
-                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email]" />
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Email]" />
                         <inputColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Phone number]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="Phone number"
                           externalMetadataColumnId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone_number]"
-                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone number]" />
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Phone number]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -190,27 +191,27 @@
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[First_name]"
                           dataType="wstr"
-                          length="255"
+                          length="10"
                           name="First_name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Last_name]"
                           dataType="wstr"
-                          length="255"
+                          length="10"
                           name="Last_name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
                           dataType="wstr"
-                          length="500"
+                          length="100"
                           name="Address" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
                           dataType="wstr"
-                          length="255"
+                          length="70"
                           name="Email" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone_number]"
                           dataType="wstr"
-                          length="50"
+                          length="20"
                           name="Phone_number" />
                       </externalMetadataColumns>
                     </input>
@@ -451,13 +452,241 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Sequence Container\Customer\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input].Columns[CustomerID]"
+                          cachedDataType="i4"
+                          cachedName="CustomerID"
+                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input].Columns[First name]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="First name"
+                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[First name]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input].Columns[Last name]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Last name"
+                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last name]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input].Columns[Email]"
+                          cachedDataType="wstr"
+                          cachedLength="70"
+                          cachedName="Email"
+                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input].Columns[Phone number]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Phone number"
+                          lineageId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone number]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                          name="CustomerID"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[First name]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[First name]"
+                          name="First name">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[First name]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Last name]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Last name]"
+                          name="Last name">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last name]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Address]"
+                          name="Address">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Email]"
+                          dataType="wstr"
+                          length="70"
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Email]"
+                          name="Email">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Phone number]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output].Columns[Phone number]"
+                          name="Phone number">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone number]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Sequence Container\Customer.Paths[OLE DB Source Output]"
-                  endId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Sequence Container\Customer\Sort.Inputs[Sort Input]"
                   name="OLE DB Source Output"
                   startId="Package\Sequence Container\Customer\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Sequence Container\Customer.Paths[Sort Output]"
+                  endId="Package\Sequence Container\Customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence Container\Customer\Sort.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1289,17 +1518,13 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Payment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_id]"
-                          dataType="i4"
-                          name="Payment_id" />
-                        <externalMetadataColumn
                           refId="Package\Sequence Container\Payment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
                           dataType="i4"
                           name="OrderID" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Payment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_method]"
                           dataType="wstr"
-                          length="100"
+                          length="50"
                           name="Payment_method" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Payment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
@@ -1310,7 +1535,7 @@
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Payment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_status]"
                           dataType="wstr"
-                          length="100"
+                          length="50"
                           name="Transaction_status" />
                       </externalMetadataColumns>
                     </input>
@@ -1653,12 +1878,12 @@
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_name]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Product_name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Category" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
@@ -1992,17 +2217,29 @@
                           externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReviewID]"
                           lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReviewID]" />
                         <inputColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Product ID]"
+                          cachedDataType="i4"
+                          cachedName="Product ID"
+                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
+                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product ID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Customer ID]"
+                          cachedDataType="i4"
+                          cachedName="Customer ID"
+                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Customer_ID]"
+                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer ID]" />
+                        <inputColumn
                           refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rating]"
                           cachedDataType="i4"
                           cachedName="Rating"
                           externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                           lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rating]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Product ID]"
-                          cachedDataType="i4"
-                          cachedName="Product ID"
-                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product ID]" />
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Review Text]"
+                          cachedDataType="nText"
+                          cachedName="Review Text"
+                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Review_Text]"
+                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Review Text]" />
                         <inputColumn
                           refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Review Date]"
                           cachedDataType="wstr"
@@ -2010,18 +2247,6 @@
                           cachedName="Review Date"
                           externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Review_Date]"
                           lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Review Date]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Customer ID]"
-                          cachedDataType="i4"
-                          cachedName="Customer ID"
-                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer ID]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Review Text]"
-                          cachedDataType="nText"
-                          cachedName="Review Text"
-                          externalMetadataColumnId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Review_Text]"
-                          lineageId="Package\Sequence Container\Review\OLE DB Source.Outputs[OLE DB Source Output].Columns[Review Text]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2029,14 +2254,6 @@
                           refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReviewID]"
                           dataType="i4"
                           name="ReviewID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                          dataType="i4"
-                          name="ProductID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                          dataType="i4"
-                          name="CustomerID" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rating]"
                           dataType="i4"
@@ -2050,6 +2267,14 @@
                           dataType="wstr"
                           length="10"
                           name="Review_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
+                          dataType="i4"
+                          name="Product_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Review\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Customer_ID]"
+                          dataType="i4"
+                          name="Customer_ID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2440,12 +2665,12 @@
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Shipment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Carrier]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Carrier" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Shipment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tracking_Number]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Tracking_Number" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Shipment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delivery_Date]"
@@ -2455,7 +2680,7 @@
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Shipment\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Shipment_Status]"
                           dataType="wstr"
-                          length="100"
+                          length="50"
                           name="Shipment_Status" />
                       </externalMetadataColumns>
                     </input>
@@ -2862,27 +3087,27 @@
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Name]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Supplier_Name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contact_Name]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Contact_Name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
                           dataType="wstr"
-                          length="500"
+                          length="100"
                           name="Address" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone_Number]"
                           dataType="wstr"
-                          length="50"
+                          length="20"
                           name="Phone_Number" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
                           dataType="wstr"
-                          length="255"
+                          length="100"
                           name="Email" />
                       </externalMetadataColumns>
                     </input>
@@ -3150,7 +3375,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B8697F50-C822-4815-8F93-C771BE72F22C}"
-          SQLTask:SqlStatementSource="truncate table Review_STG&#xA;truncate table OrderItem_STG&#xA;truncate table Shipment_STG&#xA;truncate table Product_STG&#xA;truncate table [Order_STG]&#xA;truncate table Customer_STG&#xA;truncate table Supplier_STG&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM Review_STG;&#xA;DELETE FROM OrderItem_STG;&#xA;DELETE FROM Shipment_STG;&#xA;DELETE FROM Payment_STG;&#xA;DELETE FROM Order_STG;&#xA;DELETE FROM Product_STG;&#xA;DELETE FROM Customer_STG;&#xA;DELETE FROM Supplier_STG;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -3211,40 +3436,28 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="338.4,576.8"
-          Size="338.4,620"
+          PanelSize="338.4,409.6"
+          Size="338.4,452.8"
           Id="Package\Sequence Container"
-          TopLeft="250.000000532184,99.4117646187441" />
+          TopLeft="397.222214710539,212.078430501941" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="163.2,41.6"
           Id="Package\Truncate all tables"
-          TopLeft="314.285714954746,2.29411764504794" />
+          TopLeft="485.119038954158,122.183005700244" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="396.685714954746,43.8941176450479">
+          TopLeft="566.570626832348,163.783005700244">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.5142855774383,55.5176469736961"
+              EndConnector="0,48.2954248016965"
               Start="0,0"
-              End="22.5142855774383,48.0176469736961">
+              End="0,40.7954248016965">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7588234868481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.7588234868481"
-                    Point2="0,27.7588234868481"
-                    Point3="4,27.7588234868481" />
-                  <mssgle:LineSegment
-                    End="18.5142855774383,27.7588234868481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5142855774383,27.7588234868481"
-                    Point2="22.5142855774383,27.7588234868481"
-                    Point3="22.5142855774383,31.7588234868481" />
-                  <mssgle:LineSegment
-                    End="22.5142855774383,48.0176469736961" />
+                    End="0,40.7954248016965" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3260,54 +3473,84 @@
     design-time-name="Package\Sequence Container\Customer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Customer\OLE DB Source"
-          TopLeft="313.57142923894,139.941176347924" />
+          TopLeft="313.57142923894,139.176470466241" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Sequence Container\Customer\OLE DB Destination"
           TopLeft="289.285714901528,282.941176222579" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Sequence Container\Customer\Sort"
+          TopLeft="327.142857839258,204.941176290949" />
         <EdgeLayout
-          Id="Package\Sequence Container\Customer.Paths[OLE DB Source Output]"
-          TopLeft="388.37142923894,181.541176347924">
+          Id="Package\Sequence Container\Customer.Paths[Sort Output]"
+          TopLeft="375.214286370393,246.541176290949">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-13.8857143374122,101.399999874655"
+              EndConnector="0,36.3999999316296"
               Start="0,0"
-              End="-13.8857143374122,93.899999874655">
+              End="0,28.8999999316296">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.6999999373275" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.6999999373275"
-                    Point2="0,50.6999999373275"
-                    Point3="-4,50.6999999373275" />
-                  <mssgle:LineSegment
-                    End="-9.8857143374122,50.6999999373275" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.8857143374122,50.6999999373275"
-                    Point2="-13.8857143374122,50.6999999373275"
-                    Point3="-13.8857143374122,54.6999999373275" />
-                  <mssgle:LineSegment
-                    End="-13.8857143374122,93.899999874655" />
+                    End="0,28.8999999316296" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Customer.Paths[OLE DB Source Output]"
+          TopLeft="388.37142923894,180.776470466241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.4285713996817,24.164705824708"
+              Start="0,0"
+              End="-12.4285713996817,16.664705824708">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.08235291235401" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.08235291235401"
+                    Point2="0,12.082352912354"
+                    Point3="-4,12.082352912354" />
+                  <mssgle:LineSegment
+                    End="-8.42857139968169,12.082352912354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.42857139968169,12.082352912354"
+                    Point2="-12.4285713996817,12.082352912354"
+                    Point3="-12.4285713996817,16.082352912354" />
+                  <mssgle:LineSegment
+                    End="-12.4285713996817,16.664705824708" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Customer\OLE DB Destination">
+    design-time-name="Package\Sequence Container\Customer\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3320,7 +3563,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Customer\OLE DB Source">
+    design-time-name="Package\Sequence Container\Customer\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3336,7 +3579,7 @@
     design-time-name="Package\Sequence Container\Order">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Order\OLE DB Source"
@@ -3376,7 +3619,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3412,15 +3657,15 @@
     design-time-name="Package\Sequence Container\Order Items">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Sequence Container\Order Items\OLE DB Source"
-          TopLeft="548.999991819263,211.999996840954" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Sequence Container\Order Items\OLE DB Destination"
           TopLeft="546.999991849065,376.999994382262" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\Order Items\OLE DB Source"
+          TopLeft="548.999991819263,211.999996840954" />
         <EdgeLayout
           Id="Package\Sequence Container\Order Items.Paths[OLE DB Source Output]"
           TopLeft="623.799991819263,253.599996840954">
@@ -3452,7 +3697,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3488,7 +3735,7 @@
     design-time-name="Package\Sequence Container\Payment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Payment\OLE DB Source"
@@ -3528,7 +3775,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3564,15 +3813,15 @@
     design-time-name="Package\Sequence Container\Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Sequence Container\Product\OLE DB Source"
-          TopLeft="430.9999935776,156.999997660518" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Sequence Container\Product\OLE DB Destination"
           TopLeft="446.999993339181,297.999995559454" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Sequence Container\Product\OLE DB Source"
+          TopLeft="430.9999935776,156.999997660518" />
         <EdgeLayout
           Id="Package\Sequence Container\Product.Paths[OLE DB Source Output]"
           TopLeft="505.7999935776,198.599997660518">
@@ -3604,7 +3853,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3716,7 +3967,7 @@
     design-time-name="Package\Sequence Container\Shipment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Shipment\OLE DB Source"
@@ -3744,7 +3995,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3780,7 +4033,7 @@
     design-time-name="Package\Sequence Container\Supplier">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Sequence Container\Supplier\OLE DB Source"
@@ -3788,39 +4041,41 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Sequence Container\Supplier\OLE DB Destination"
-          TopLeft="475.999992907047,342.999994888902" />
+          TopLeft="475.999992907047,343.999994874001" />
         <EdgeLayout
           Id="Package\Sequence Container\Supplier.Paths[OLE DB Source Output]"
-          TopLeft="549.799992921949,219.599997347593">
+          TopLeft="549.799992921948,219.599997347593">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.3999999850989,123.399997541309"
+              EndConnector="11.399999985099,124.399997526408"
               Start="0,0"
-              End="11.3999999850989,115.899997541309">
+              End="11.399999985099,116.899997526408">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.6999987706543" />
+                    End="0,58.199998763204" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,57.6999987706543"
-                    Point2="0,61.6999987706543"
-                    Point3="4,61.6999987706543" />
+                    Point1="0,58.199998763204"
+                    Point2="0,62.199998763204"
+                    Point3="4,62.199998763204" />
                   <mssgle:LineSegment
-                    End="7.39999998509893,61.6999987706543" />
+                    End="7.39999998509904,62.199998763204" />
                   <mssgle:CubicBezierSegment
-                    Point1="7.39999998509893,61.6999987706543"
-                    Point2="11.3999999850989,61.6999987706543"
-                    Point3="11.3999999850989,65.6999987706543" />
+                    Point1="7.39999998509904,62.199998763204"
+                    Point2="11.399999985099,62.199998763204"
+                    Point3="11.399999985099,66.199998763204" />
                   <mssgle:LineSegment
-                    End="11.3999999850989,115.899997541309" />
+                    End="11.399999985099,116.899997526408" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

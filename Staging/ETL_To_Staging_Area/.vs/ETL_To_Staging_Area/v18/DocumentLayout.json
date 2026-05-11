@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "B:\\Projects\\DWH-E-Commerce-Project\\Staging\\ETL_To_Staging_Area\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1FFCAC89-D01D-4C00-E8E6-AD55798273B1}|ETL_To_Staging_Area\\ETL_To_Staging_Area.dtproj|B:\\Projects\\DWH-E-Commerce-Project\\Staging\\ETL_To_Staging_Area\\ETL_To_Staging_Area\\Staging.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{1FFCAC89-D01D-4C00-E8E6-AD55798273B1}|ETL_To_Staging_Area\\ETL_To_Staging_Area.dtproj|solutionrelative:ETL_To_Staging_Area\\Staging.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,23 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Staging.dtsx [Design]",
-              "DocumentMoniker": "B:\\Projects\\DWH-E-Commerce-Project\\Staging\\ETL_To_Staging_Area\\ETL_To_Staging_Area\\Staging.dtsx",
-              "RelativeDocumentMoniker": "ETL_To_Staging_Area\\Staging.dtsx",
-              "ToolTip": "B:\\Projects\\DWH-E-Commerce-Project\\Staging\\ETL_To_Staging_Area\\ETL_To_Staging_Area\\Staging.dtsx [Design]",
-              "RelativeToolTip": "ETL_To_Staging_Area\\Staging.dtsx [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-05-10T19:10:46.302Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
