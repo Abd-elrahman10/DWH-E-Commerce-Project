@@ -1,0 +1,141 @@
+-- ============================================
+-- Create DWH Database
+-- ============================================
+CREATE DATABASE OnlineShop_DWH;
+GO
+
+USE OnlineShop_DWH;
+GO
+
+-- 1. DimDate
+CREATE TABLE DimDate (
+    DateKey         INT                 PRIMARY KEY,
+    FullDate        DATE                NOT NULL,
+    Day             INT                 NOT NULL,
+    Month           INT                 NOT NULL,
+    Year            INT                 NOT NULL,
+    Month_Name      NVARCHAR(20)        NOT NULL,
+    Quarter         INT                 NOT NULL
+);
+GO
+
+-- 2. DimCustomer (Type 2)
+CREATE TABLE DimCustomer (
+    CustomerKey     INT IDENTITY(1,1)   PRIMARY KEY,
+    CustomerID      INT                 NOT NULL,
+    First_Name      NVARCHAR(10)        NOT NULL,   -- matches source
+    Last_Name       NVARCHAR(10)        NOT NULL,   -- matches source
+    Address         NVARCHAR(100),
+    Email           NVARCHAR(70),
+    Phone_Number    NVARCHAR(20),
+    Start_Date      DATE             NOT NULL  default GETDATE()  ,
+    End_Date        DATE            NOT   NULL  default '9999-12-31',
+    IsCurrent       BIT                 NOT NULL DEFAULT 1
+);
+GO
+
+-- 3. DimSupplier (Type 1)
+CREATE TABLE DimSupplier (
+    SupplierKey     INT IDENTITY(1,1)   PRIMARY KEY,
+    SupplierID      INT                 NOT NULL,
+    Supplier_Name   NVARCHAR(100)       NOT NULL,   -- matches source
+    Contact_Name    NVARCHAR(100),
+    Address         NVARCHAR(100),
+    Phone_Number    NVARCHAR(20),
+    Email           NVARCHAR(100)
+);
+GO
+
+-- 4. DimProduct (Type 2)
+CREATE TABLE DimProduct (
+    ProductKey      INT IDENTITY(1,1)   PRIMARY KEY,
+    ProductID       INT                 NOT NULL,
+    Product_Name    NVARCHAR(100)       NOT NULL,   -- matches source
+    Category        NVARCHAR(100),
+    Price           DECIMAL(18,2)       NOT NULL,
+    Start_Date      DATE                NOT NULL   default GETDATE()  ,
+    End_Date        DATE              NOT  NULL    default '9999-12-31'   ,
+    IsCurrent       BIT                 NOT NULL DEFAULT 1
+);
+GO
+
+-- 5. DimPayment (Type 1)
+CREATE TABLE DimPayment (
+    PaymentKey          INT IDENTITY(1,1)   PRIMARY KEY,
+    PaymentID           INT                 NOT NULL,
+    Payment_Method      NVARCHAR(50)        NOT NULL,   
+    Transaction_Status  NVARCHAR(50)        NOT NULL ,
+    Amount DECIMAL(18,2) NULL
+);
+GO
+
+-- 6. DimShipment (Type 1)
+CREATE TABLE DimShipment (
+    ShipmentKey         INT IDENTITY(1,1)   PRIMARY KEY,
+    ShipmentID          INT                 NOT NULL,
+    Carrier             NVARCHAR(100),                  -- matches source
+    Tracking_Number     NVARCHAR(100)                   -- matches source
+);
+GO
+
+-- 7. DimJunkStatus (Junk)
+CREATE TABLE DimJunkStatus (
+    ShipmentStatusKey   INT IDENTITY(1,1)   PRIMARY KEY,
+    Is_Delivered        BIT                 NOT NULL,
+    Is_Late             BIT                 NOT NULL,
+    Late_Reason         NVARCHAR(100)       NOT NULL
+);
+GO
+
+INSERT INTO DimJunkStatus VALUES
+(1, 0, 'N/A'),
+(1, 1, 'Carrier Delay'),
+(1, 1, 'Weather'),
+(1, 1, 'Customs'),
+(1, 1, 'Address Issue'),
+(0, 0, 'N/A'),
+(0, 1, 'Carrier Delay'),
+(0, 1, 'Weather'),
+(0, 1, 'Lost Package');
+GO
+
+-- 8. Fact_Sales
+CREATE TABLE Fact_Sales (
+    SalesKey                INT IDENTITY(1,1)   PRIMARY KEY,
+    CustomerKey             INT     NOT NULL    FOREIGN KEY REFERENCES DimCustomer(CustomerKey),
+    ProductKey              INT     NOT NULL    FOREIGN KEY REFERENCES DimProduct(ProductKey),
+    SupplierKey             INT     NOT NULL    FOREIGN KEY REFERENCES DimSupplier(SupplierKey),
+    OrderDateKey            INT     NOT NULL    FOREIGN KEY REFERENCES DimDate(DateKey),
+    PaymentKey              INT     NOT NULL    FOREIGN KEY REFERENCES DimPayment(PaymentKey),
+    OrderID                 INT                 NOT NULL,
+    OrderItemID             INT                 NOT NULL,
+    Quantity                INT                 NOT NULL,
+    Price_At_Purchase       DECIMAL(18,2)       NOT NULL,
+    Total_Amount            DECIMAL(18,2)       NOT NULL
+);
+GO
+
+-- 9. Fact_Shipment
+CREATE TABLE Fact_Shipment (
+    ShipmentFactKey         INT IDENTITY(1,1)   PRIMARY KEY,
+    CustomerKey             INT     NOT NULL    FOREIGN KEY REFERENCES DimCustomer(CustomerKey),
+    ShipmentDateKey         INT     NOT NULL    FOREIGN KEY REFERENCES DimDate(DateKey),
+    DeliveryDateKey         INT     NOT NULL    FOREIGN KEY REFERENCES DimDate(DateKey),
+    ShipmentKey             INT     NOT NULL    FOREIGN KEY REFERENCES DimShipment(ShipmentKey),
+    ShipmentStatusKey       INT     NOT NULL    FOREIGN KEY REFERENCES DimJunkStatus(ShipmentStatusKey),
+    OrderID                 INT                 NOT NULL,
+    Delivery_Duration_Days  INT                 NOT NULL,
+    Shipment_Count          INT                 NOT NULL DEFAULT 1
+);
+GO
+
+-- 10. Fact_Review
+CREATE TABLE Fact_Review (
+    ReviewFactKey           INT IDENTITY(1,1)   PRIMARY KEY,
+    CustomerKey             INT     NOT NULL    FOREIGN KEY REFERENCES DimCustomer(CustomerKey),
+    ProductKey              INT     NOT NULL    FOREIGN KEY REFERENCES DimProduct(ProductKey),
+    ReviewDateKey           INT     NOT NULL    FOREIGN KEY REFERENCES DimDate(DateKey),
+    ReviewID                INT                 NOT NULL,
+    Rating                  INT                 NOT NULL CHECK (Rating BETWEEN 1 AND 5)
+);
+GO
