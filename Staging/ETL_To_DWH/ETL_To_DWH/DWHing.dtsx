@@ -5,39 +5,39 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-U8TQGK1"
   DTS:CreatorName="DESKTOP-U8TQGK1\Abd-ElRahman"
-  DTS:DTSID="{34EF1B62-3EBF-472A-BCEE-7B482388987D}"
+  DTS:DTSID="{FF6E1693-B1DA-434F-A4B9-03C910231A39}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
   DTS:ObjectName="DWHing"
   DTS:PackageType="5"
-  DTS:VersionBuild="93"
-  DTS:VersionGUID="{6CA5ED03-4C38-4D7A-AFD0-D53E034D833E}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{28976FA5-17F9-48A2-B6E6-67332D25C9C3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[OnlineShop_DWH]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{DEBFAE9F-E960-4E59-B46C-F87471C05190}"
+      DTS:DTSID="{5CCDEABF-1123-4038-B5E4-0BD77773A80D}"
       DTS:ObjectName="OnlineShop_DWH">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DWHing-{DEBFAE9F-E960-4E59-B46C-F87471C05190}DESKTOP-U8TQGK1.OnlineShop_DWH;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=OnlineShop_DWH;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DWHing-{5CCDEABF-1123-4038-B5E4-0BD77773A80D}DESKTOP-U8TQGK1.OnlineShop_DWH;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[OnlineShop_STG]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{45FE636D-A908-478B-9875-303B69408899}"
+      DTS:DTSID="{15F315AF-5D7C-4AE1-A75B-39DB91A87176}"
       DTS:ObjectName="OnlineShop_STG">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MAHMOUD-PC;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DWHing-{45FE636D-A908-478B-9875-303B69408899}DESKTOP-U8TQGK1.OnlineShop_STG;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=OnlineShop_STG;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DWHing-{15F315AF-5D7C-4AE1-A75B-39DB91A87176}DESKTOP-U8TQGK1.OnlineShop_STG;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,7 +47,7 @@
       DTS:refId="Package\Dimensions"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{A212DFC4-C490-4484-95E0-448B4DC04F31}"
+      DTS:DTSID="{23519D8E-FBF2-413E-98B9-1CEA87C3879E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dimensions">
@@ -57,7 +57,7 @@
           DTS:refId="Package\Dimensions\DimCustomer"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{4410E896-41C0-4224-9454-9AA144C73FD1}"
+          DTS:DTSID="{75450B20-2250-4940-B3FC-E82851C7FF62}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimCustomer"
@@ -615,6 +615,177 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Dimensions\DimCustomer\Handle missing values"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Handle missing values"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input].Columns[First_name]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="First_name"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[First_name]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[First_name]}) ? "unknown" : #{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[First_name]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(First_name) ? "unknown" : First_name</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input].Columns[Last_name]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Last_name"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Last_name]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Last_name]}) ? "unknown" : #{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Last_name]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Last_name) ? "unknown" : Last_name</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Address]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Address]}) ? "unknown" : #{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Address]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Address) ? "unknown" : Address</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input].Columns[Email]"
+                          cachedDataType="wstr"
+                          cachedLength="70"
+                          cachedName="Email"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Email]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Email]}) ? "unknown" : #{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Email]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Email) ? "unknown" : Email</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input].Columns[Phone_number]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Phone_number"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Phone_number]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Phone_number]}) ? "unknown" : #{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[Phone_number]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Phone_number) ? "unknown" : Phone_number</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Dimensions\DimCustomer\Lookup"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -1062,6 +1233,96 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Prevent any Customer IDs null"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Inputs[Conditional Split Input].Columns[CustomerID]"
+                          cachedDataType="i4"
+                          cachedName="CustomerID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[CustomerID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Customer ID is not null]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Customer ID is not null"
+                      synchronousInputId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">![ISNULL](#{Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output].Columns[CustomerID]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(CustomerID)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Dimensions\DimCustomer\Sort"
                   componentClassID="Microsoft.Sort"
                   contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1287,6 +1548,16 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Dimensions\DimCustomer.Paths[Customer ID is not null]"
+                  endId="Package\Dimensions\DimCustomer\Handle missing values.Inputs[Derived Column Input]"
+                  name="Customer ID is not null"
+                  startId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Outputs[Customer ID is not null]" />
+                <path
+                  refId="Package\Dimensions\DimCustomer.Paths[Derived Column Output]"
+                  endId="Package\Dimensions\DimCustomer\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Dimensions\DimCustomer\Handle missing values.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Dimensions\DimCustomer.Paths[Lookup Match Output]"
                   endId="Package\Dimensions\DimCustomer\Conditional Split.Inputs[Conditional Split Input]"
                   name="Lookup Match Output"
@@ -1308,7 +1579,7 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
                   startId="Package\Dimensions\DimCustomer\Conditional Split.Outputs[Record Changed]" />
                 <path
                   refId="Package\Dimensions\DimCustomer.Paths[Sort Output]"
-                  endId="Package\Dimensions\DimCustomer\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Dimensions\DimCustomer\Prevent any Customer IDs null.Inputs[Conditional Split Input]"
                   name="Sort Output"
                   startId="Package\Dimensions\DimCustomer\Sort.Outputs[Sort Output]" />
               </paths>
@@ -1319,16 +1590,16 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
           DTS:refId="Package\Dimensions\DimDate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1BB43FBD-0F27-4E96-9865-C7738A074A5F}"
+          DTS:DTSID="{9D37EEF4-75F6-46A3-91AB-8FD08C913F08}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimDate"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DEBFAE9F-E960-4E59-B46C-F87471C05190}"
+              SQLTask:Connection="{5CCDEABF-1123-4038-B5E4-0BD77773A80D}"
               SQLTask:SqlStatementSource="USE OnlineShop_DWH&#xA;GO&#xA;&#xA;-- Populate DimDate with all dates 2020 to 2030&#xA;WITH DateRange AS (&#xA;    SELECT CAST('2020-01-01' AS DATE) AS dt&#xA;    UNION ALL&#xA;    SELECT DATEADD(DAY, 1, dt)&#xA;    FROM DateRange&#xA;    WHERE dt &lt; '2030-12-31'&#xA;)&#xA;INSERT INTO DimDate (DateKey, FullDate, Day, Month, Year, Month_Name, Quarter)&#xA;SELECT&#xA;    CONVERT(INT, FORMAT(dt, 'yyyyMMdd'))  AS DateKey,&#xA;    dt                                     AS FullDate,&#xA;    DAY(dt)                               AS Day,&#xA;    MONTH(dt)                             AS Month,&#xA;    YEAR(dt)                              AS Year,&#xA;    DATENAME(MONTH, dt)                   AS Month_Name,&#xA;    DATEPART(QUARTER, dt)                 AS Quarter&#xA;FROM DateRange&#xA;OPTION (MAXRECURSION 5000)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1336,16 +1607,16 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
           DTS:refId="Package\Dimensions\DimJunStatus"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6B03551C-3204-47F9-B220-F707053A24C0}"
+          DTS:DTSID="{2252F91A-EF67-44B0-BF37-6C0862521A98}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimJunStatus"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{DEBFAE9F-E960-4E59-B46C-F87471C05190}"
+              SQLTask:Connection="{5CCDEABF-1123-4038-B5E4-0BD77773A80D}"
               SQLTask:SqlStatementSource="INSERT INTO DimJunkStatus VALUES&#xA;(1, 0, 'N/A'),&#xA;(1, 1, 'Carrier Delay'),&#xA;(1, 1, 'Weather'),&#xA;(1, 1, 'Customs'),&#xA;(1, 1, 'Address Issue'),&#xA;(0, 0, 'N/A'),&#xA;(0, 1, 'Carrier Delay'),&#xA;(0, 1, 'Weather'),&#xA;(0, 1, 'Lost Package')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1353,7 +1624,7 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
           DTS:refId="Package\Dimensions\DimPayment"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{9040BD97-92E9-4087-8066-123ED421F137}"
+          DTS:DTSID="{F4019FAE-B1D6-4ECC-994E-8A11665A81BA}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimPayment"
@@ -1512,6 +1783,130 @@ VALUES (?, ?, ?, ?, ?, ?);</property>
                           refId="Package\Dimensions\DimPayment\DimPayment.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Dimensions\DimPayment\DimPayment.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\DimPayment\Handle missing values"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Handle missing values"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input].Columns[Payment_method]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Payment_method"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Payment_method]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Payment_method]}) ? "unknown" : #{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Payment_method]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Payment_method) ? "unknown" : Payment_method</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input].Columns[Amount]"
+                          cachedDataType="numeric"
+                          cachedName="Amount"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Amount]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Amount]}) ? 0 : #{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Amount]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Amount) ? 0 : Amount</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input].Columns[Transaction_status]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Transaction_status"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Transaction_status]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Transaction_status]}) ? "pending" : #{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[Transaction_status]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Transaction_status) ? "pending" : Transaction_status</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2005,6 +2400,96 @@ where [refTable].[PaymentID] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Dimensions\DimPayment\Prevent any Order ID null"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Prevent any Order ID null"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Inputs[Conditional Split Input].Columns[OrderID]"
+                          cachedDataType="i4"
+                          cachedName="OrderID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[OrderID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Order id is not null]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Order id is not null"
+                      synchronousInputId="Package\Dimensions\DimPayment\Prevent any Order ID null.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">![ISNULL](#{Package\Dimensions\DimPayment\Sort.Outputs[Sort Output].Columns[OrderID]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(OrderID)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Dimensions\DimPayment\Prevent any Order ID null.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Dimensions\DimPayment\Prevent any Order ID null.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Dimensions\DimPayment\Sort"
                   componentClassID="Microsoft.Sort"
                   contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2170,6 +2655,11 @@ where [refTable].[PaymentID] = ?</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Dimensions\DimPayment.Paths[Derived Column Output]"
+                  endId="Package\Dimensions\DimPayment\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Dimensions\DimPayment\Handle missing values.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Dimensions\DimPayment.Paths[Lookup Match Output]"
                   endId="Package\Dimensions\DimPayment\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
@@ -2185,8 +2675,13 @@ where [refTable].[PaymentID] = ?</property>
                   name="OLE DB Source Output"
                   startId="Package\Dimensions\DimPayment\Payment_STG.Outputs[OLE DB Source Output]" />
                 <path
+                  refId="Package\Dimensions\DimPayment.Paths[Order id is not null]"
+                  endId="Package\Dimensions\DimPayment\Handle missing values.Inputs[Derived Column Input]"
+                  name="Order id is not null"
+                  startId="Package\Dimensions\DimPayment\Prevent any Order ID null.Outputs[Order id is not null]" />
+                <path
                   refId="Package\Dimensions\DimPayment.Paths[Sort Output]"
-                  endId="Package\Dimensions\DimPayment\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Dimensions\DimPayment\Prevent any Order ID null.Inputs[Conditional Split Input]"
                   name="Sort Output"
                   startId="Package\Dimensions\DimPayment\Sort.Outputs[Sort Output]" />
               </paths>
@@ -2197,7 +2692,7 @@ where [refTable].[PaymentID] = ?</property>
           DTS:refId="Package\Dimensions\DimProduct"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{9AC0D3C3-75A3-46EA-B8E1-20051536ECAB}"
+          DTS:DTSID="{7642DF6D-C8C7-42C8-85C5-A063D42255FB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimProduct"
@@ -2322,6 +2817,153 @@ where [refTable].[PaymentID] = ?</property>
                           refId="Package\Dimensions\DimProduct\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Dimensions\DimProduct\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\DimProduct\Handle missing values"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Handle missing values"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input].Columns[Product_name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Product_name"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Product_name]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Product_name]}) ? "unknown" : #{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Product_name]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Product_name) ? "unknown" : Product_name</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input].Columns[Category]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Category"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Category]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Category]}) ? "unknown" : #{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Category]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Category) ? "unknown" : Category</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input].Columns[Price]"
+                          cachedDataType="numeric"
+                          cachedName="Price"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Price]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Price]}) ? 0 : #{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[Price]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Price) ? 0 : Price</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input].Columns[SupplierID]"
+                          cachedDataType="i4"
+                          cachedName="SupplierID"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[SupplierID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[SupplierID]}) ? 0 : #{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[SupplierID]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(SupplierID) ? 0 : SupplierID</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2883,6 +3525,96 @@ VALUES (?, ?, ?, ?);</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Dimensions\DimProduct\Prevent any null IDs"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Prevent any null IDs"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimProduct\Prevent any null IDs.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimProduct\Prevent any null IDs.Inputs[Conditional Split Input].Columns[ProductID]"
+                          cachedDataType="i4"
+                          cachedName="ProductID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[ProductID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Product ID is not null]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Product ID is not null"
+                      synchronousInputId="Package\Dimensions\DimProduct\Prevent any null IDs.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">![ISNULL](#{Package\Dimensions\DimProduct\Sort.Outputs[Sort Output].Columns[ProductID]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(ProductID)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Dimensions\DimProduct\Prevent any null IDs.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Dimensions\DimProduct\Prevent any null IDs.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Dimensions\DimProduct\Product_STG"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -3267,6 +3999,11 @@ VALUES (?, ?, ?, ?);</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Dimensions\DimProduct.Paths[Derived Column Output]"
+                  endId="Package\Dimensions\DimProduct\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Dimensions\DimProduct\Handle missing values.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Dimensions\DimProduct.Paths[Lookup Match Output]"
                   endId="Package\Dimensions\DimProduct\Conditional Split.Inputs[Conditional Split Input]"
                   name="Lookup Match Output"
@@ -3282,13 +4019,18 @@ VALUES (?, ?, ?, ?);</property>
                   name="OLE DB Source Output"
                   startId="Package\Dimensions\DimProduct\Product_STG.Outputs[OLE DB Source Output]" />
                 <path
+                  refId="Package\Dimensions\DimProduct.Paths[Product ID is not null]"
+                  endId="Package\Dimensions\DimProduct\Handle missing values.Inputs[Derived Column Input]"
+                  name="Product ID is not null"
+                  startId="Package\Dimensions\DimProduct\Prevent any null IDs.Outputs[Product ID is not null]" />
+                <path
                   refId="Package\Dimensions\DimProduct.Paths[Record Changed]"
                   endId="Package\Dimensions\DimProduct\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Record Changed"
                   startId="Package\Dimensions\DimProduct\Conditional Split.Outputs[Record Changed]" />
                 <path
                   refId="Package\Dimensions\DimProduct.Paths[Sort Output]"
-                  endId="Package\Dimensions\DimProduct\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Dimensions\DimProduct\Prevent any null IDs.Inputs[Conditional Split Input]"
                   name="Sort Output"
                   startId="Package\Dimensions\DimProduct\Sort.Outputs[Sort Output]" />
               </paths>
@@ -3299,7 +4041,7 @@ VALUES (?, ?, ?, ?);</property>
           DTS:refId="Package\Dimensions\DimShipment"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{6E93DA19-2404-4CA1-A22A-28FB57E59B79}"
+          DTS:DTSID="{2C35410D-8ABA-445B-99A5-CE268D5F2F48}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimShipment"
@@ -3309,6 +4051,319 @@ VALUES (?, ?, ?, ?);</property>
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Dimensions\DimShipment\Handle missing values"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Handle missing values"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[ShipmentID]"
+                          cachedDataType="i4"
+                          cachedName="ShipmentID"
+                          cachedSortKeyPosition="1"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[ShipmentID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[ShipmentID]}) ? #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[OrderID]} : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[ShipmentID]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(ShipmentID) ? OrderID : ShipmentID</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[OrderID]"
+                          cachedDataType="i4"
+                          cachedName="OrderID"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[OrderID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[OrderID]}) ? #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[ShipmentID]} : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[OrderID]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(OrderID) ? ShipmentID : OrderID</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[Shipment_Date]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Shipment_Date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Date]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Date]}) ? (DT_WSTR,10)(DT_DBDATE)[GETDATE]() : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Date]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Shipment_Date) ? (DT_WSTR,10)(DT_DBDATE)GETDATE() : Shipment_Date</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[Carrier]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Carrier"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Carrier]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Carrier]}) ? "unknown" : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Carrier]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Carrier) ? "unknown" : Carrier</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[Delivery_Date]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Delivery_Date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Delivery_Date]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Date]}) ? "9999-12-31" : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Date]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Shipment_Date) ? "9999-12-31" : Shipment_Date</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[Tracking_Number]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Tracking_Number"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Tracking_Number]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Tracking_Number]}) ? "unknown" : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Tracking_Number]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Tracking_Number) ? "unknown" : Tracking_Number</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input].Columns[Shipment_Status]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Shipment_Status"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Status]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Status]}) ? "Pending" : #{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[Shipment_Status]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Shipment_Status) ? "Pending" : Shipment_Status</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Ignore any missing Shipment ID"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input].Columns[OrderID]"
+                          cachedDataType="i4"
+                          cachedName="OrderID"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[OrderID]" />
+                        <inputColumn
+                          refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input].Columns[ShipmentID]"
+                          cachedDataType="i4"
+                          cachedName="ShipmentID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[ShipmentID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Shipment ID is not null]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Shipment ID is not null"
+                      synchronousInputId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">![ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[OrderID]}) || ![ISNULL](#{Package\Dimensions\DimShipment\Sort.Outputs[Sort Output].Columns[ShipmentID]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(OrderID) || !ISNULL(ShipmentID)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Dimensions\DimShipment\Lookup"
                   componentClassID="Microsoft.Lookup"
@@ -4227,6 +5282,11 @@ where [refTable].[ShipmentID] = ?</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Dimensions\DimShipment.Paths[Derived Column Output]"
+                  endId="Package\Dimensions\DimShipment\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Dimensions\DimShipment\Handle missing values.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Dimensions\DimShipment.Paths[Lookup Match Output]"
                   endId="Package\Dimensions\DimShipment\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
@@ -4242,8 +5302,13 @@ where [refTable].[ShipmentID] = ?</property>
                   name="OLE DB Source Output"
                   startId="Package\Dimensions\DimShipment\Shipment_STG.Outputs[OLE DB Source Output]" />
                 <path
+                  refId="Package\Dimensions\DimShipment.Paths[Shipment ID is not null]"
+                  endId="Package\Dimensions\DimShipment\Handle missing values.Inputs[Derived Column Input]"
+                  name="Shipment ID is not null"
+                  startId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Outputs[Shipment ID is not null]" />
+                <path
                   refId="Package\Dimensions\DimShipment.Paths[Sort Output]"
-                  endId="Package\Dimensions\DimShipment\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Dimensions\DimShipment\Ignore any missing Shipment ID.Inputs[Conditional Split Input]"
                   name="Sort Output"
                   startId="Package\Dimensions\DimShipment\Sort.Outputs[Sort Output]" />
               </paths>
@@ -4254,7 +5319,7 @@ where [refTable].[ShipmentID] = ?</property>
           DTS:refId="Package\Dimensions\DimSupplier"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{FE036445-A4B9-4D23-8913-2B0C9B5066F8}"
+          DTS:DTSID="{34037E94-7FDA-4AED-92D5-0F45178412A7}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DimSupplier"
@@ -4435,6 +5500,201 @@ where [refTable].[ShipmentID] = ?</property>
                           refId="Package\Dimensions\DimSupplier\DimSupplier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Dimensions\DimSupplier\DimSupplier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\DimSupplier\Handle Missing Values"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Handle Missing Values"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input].Columns[SupplierID]"
+                          cachedDataType="i4"
+                          cachedName="SupplierID"
+                          cachedSortKeyPosition="1"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[SupplierID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[SupplierID]}) ? 0 : #{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[SupplierID]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(SupplierID) ? 0 : SupplierID</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input].Columns[Supplier_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Supplier_Name"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Supplier_Name]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Supplier_Name]}) ? "unknown" : #{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Supplier_Name]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Supplier_Name) ? "unknown" : Supplier_Name</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input].Columns[Contact_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Contact_Name"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Contact_Name]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Contact_Name]}) ? "unknown" : #{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Contact_Name]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Contact_Name) ? "unknown" : Contact_Name</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Address]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Address]}) ? "unknown" : #{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Address]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Address) ? "unknown" : Address</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input].Columns[Phone_Number]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Phone_Number"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Phone_Number]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Phone_Number]}) ? "unknown" : #{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Phone_Number]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Phone_Number) ? "unknown" : Phone_Number</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input].Columns[Email]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Email"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Email]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Email]}) ? "unknown" : #{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[Email]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(Email) ? "unknown" : Email</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -4792,6 +6052,96 @@ WHERE SupplierID  = ?
                           refId="Package\Dimensions\DimSupplier\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Dimensions\DimSupplier\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Prevent Supplier ID null"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Inputs[Conditional Split Input].Columns[SupplierID]"
+                          cachedDataType="i4"
+                          cachedName="SupplierID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[SupplierID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Supplier ID is not null]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Supplier ID is not null"
+                      synchronousInputId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">![ISNULL](#{Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output].Columns[SupplierID]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(SupplierID)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -5243,6 +6593,11 @@ WHERE SupplierID  = ?
               </components>
               <paths>
                 <path
+                  refId="Package\Dimensions\DimSupplier.Paths[Derived Column Output]"
+                  endId="Package\Dimensions\DimSupplier\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Dimensions\DimSupplier\Handle Missing Values.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Dimensions\DimSupplier.Paths[Lookup Match Output]"
                   endId="Package\Dimensions\DimSupplier\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
@@ -5259,9 +6614,14 @@ WHERE SupplierID  = ?
                   startId="Package\Dimensions\DimSupplier\Supplier_STG.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Dimensions\DimSupplier.Paths[Sort Output]"
-                  endId="Package\Dimensions\DimSupplier\Lookup.Inputs[Lookup Input]"
+                  endId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Inputs[Conditional Split Input]"
                   name="Sort Output"
                   startId="Package\Dimensions\DimSupplier\Sort.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Dimensions\DimSupplier.Paths[Supplier ID is not null]"
+                  endId="Package\Dimensions\DimSupplier\Handle Missing Values.Inputs[Derived Column Input]"
+                  name="Supplier ID is not null"
+                  startId="Package\Dimensions\DimSupplier\Prevent Supplier ID null.Outputs[Supplier ID is not null]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -5272,7 +6632,7 @@ WHERE SupplierID  = ?
       DTS:refId="Package\Fact tables"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{754887E7-80D8-4963-AAD4-1E3F9627DD33}"
+      DTS:DTSID="{F82AA0E6-B5E3-4654-83DF-F24748C979AB}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fact tables">
@@ -5282,7 +6642,7 @@ WHERE SupplierID  = ?
           DTS:refId="Package\Fact tables\FactReview"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E542FFA6-DAC6-4C97-87BB-5BE760DC4405}"
+          DTS:DTSID="{272683A5-173E-4F29-9B98-CD0DD791921A}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="FactReview"
@@ -6148,7 +7508,7 @@ FROM OnlineShop_STG.dbo.Review_STG  r</property>
           DTS:refId="Package\Fact tables\FactSales"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{5887FD23-9F41-4447-BC1F-CD139DFBA77A}"
+          DTS:DTSID="{783B678B-A210-4F5E-B1D0-6F821BD2A849}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="FactSales"
@@ -7530,7 +8890,7 @@ JOIN Product_STG s  ON oi.ProductID = s.ProductID</property>
           DTS:refId="Package\Fact tables\FactShipment"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{68CAAC1E-B65E-4B45-8AD8-3303D5ED90CF}"
+          DTS:DTSID="{D86072EC-16E3-4BC1-9B99-5AED73A5BC8F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="FactShipment"
@@ -9023,7 +10383,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       DTS:refId="Package\Truncate all dimensions and Facrt"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1AAF0677-6AE9-43D6-8E62-5307E196E3C9}"
+      DTS:DTSID="{449C1065-2535-4519-9852-5510E75D8B84}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate all dimensions and Facrt"
@@ -9032,7 +10392,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DEBFAE9F-E960-4E59-B46C-F87471C05190}"
+          SQLTask:Connection="{5CCDEABF-1123-4038-B5E4-0BD77773A80D}"
           SQLTask:SqlStatementSource="-- Step 1: Facts First (children)&#xA;DELETE FROM Fact_Sales&#xA;DELETE FROM Fact_Shipment&#xA;DELETE FROM Fact_Review&#xA;&#xA;-- Step 2: Then Dimensions (parents)&#xA;DELETE FROM DimProduct      -- depends on DimSupplier&#xA;DELETE FROM DimCustomer&#xA;DELETE FROM DimSupplier&#xA;DELETE FROM DimPayment&#xA;DELETE FROM DimShipment&#xA;DELETE FROM DimJunkStatus&#xA;DELETE FROM DimDate" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -9041,7 +10401,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{74B59F7F-16FB-40FD-B6AD-4E7CB7C7A2B6}"
+      DTS:DTSID="{C973E3D4-A331-4926-980E-946E2E983FB3}"
       DTS:From="Package\Dimensions"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -9049,7 +10409,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{C6B29582-33AC-4B31-85BD-2B320E5C7F4E}"
+      DTS:DTSID="{00F943BB-1298-414F-BB34-00723C71478B}"
       DTS:From="Package\Truncate all dimensions and Facrt"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -9190,18 +10550,6 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Dimensions\DimCustomer\DimCustomer"
-          TopLeft="464.99999307096,418.999993756414" />
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Dimensions\DimCustomer\Sort"
-          TopLeft="486.999992743135,227.999996602535" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Dimensions\DimCustomer\Customer_STG"
-          TopLeft="469.999992996454,146.999997809529" />
-        <NodeLayout
           Size="164.8,41.6"
           Id="Package\Dimensions\DimCustomer\OLE DB Command"
           TopLeft="839.999987483025,383.999994277954" />
@@ -9210,23 +10558,55 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           Id="Package\Dimensions\DimCustomer\Lookup"
           TopLeft="471.999992966652,315.999995291233" />
         <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Dimensions\DimCustomer\Prevent any Customer IDs null"
+          TopLeft="848.769222458968,150.153844365707" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Dimensions\DimCustomer\Customer_STG"
+          TopLeft="466.153839207612,92.384614007977" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Dimensions\DimCustomer\DimCustomer"
+          TopLeft="464.99999307096,418.999993756414" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Dimensions\DimCustomer\Handle missing values"
+          TopLeft="576.153837568485,214.846150644697" />
+        <NodeLayout
           Size="154.4,41.6"
           Id="Package\Dimensions\DimCustomer\Conditional Split"
           TopLeft="735.666658346852,290.833328999579" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Dimensions\DimCustomer\Sort"
+          TopLeft="483.923069712062,159.538459161153" />
         <EdgeLayout
           Id="Package\Dimensions\DimCustomer.Paths[Sort Output]"
-          TopLeft="532.099992854893,269.599996602535">
+          TopLeft="581.523069712062,180.338459161153">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.3999986886978"
+              EndConnector="267.246152746906,-9.38461479544608"
               Start="0,0"
-              End="0,38.8999986886978">
+              End="259.746152746906,-9.38461479544608">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.8999986886978" />
+                    End="129.623076373453,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.623076373453,0"
+                    Point2="133.623076373453,0"
+                    Point3="133.623076373453,-4" />
+                  <mssgle:LineSegment
+                    End="133.623076373453,-5.38461479544608" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133.623076373453,-5.38461479544608"
+                    Point2="133.623076373453,-9.38461479544608"
+                    Point3="137.623076373453,-9.38461479544608" />
+                  <mssgle:LineSegment
+                    End="259.746152746906,-9.38461479544608" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9275,30 +10655,18 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimensions\DimCustomer.Paths[OLE DB Source Output]"
-          TopLeft="544.399992996454,188.599997809529">
+          TopLeft="536.638454459837,133.984614007977">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.60000025331965,39.399998793006"
+              EndConnector="0,25.5538451531759"
               Start="0,0"
-              End="-8.60000025331965,31.899998793006">
+              End="0,18.0538451531759">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.699999396503" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.699999396503"
-                    Point2="0,19.699999396503"
-                    Point3="-4,19.699999396503" />
-                  <mssgle:LineSegment
-                    End="-4.60000025331965,19.699999396503" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.60000025331965,19.699999396503"
-                    Point2="-8.60000025331965,19.699999396503"
-                    Point3="-8.60000025331965,23.699999396503" />
-                  <mssgle:LineSegment
-                    End="-8.60000025331965,31.899998793006" />
+                    End="0,18.0538451531759" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9369,35 +10737,81 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimCustomer.Paths[Derived Column Output]"
+          TopLeft="667.353837568485,256.446150644697">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138.953844601833,59.5538446465363"
+              Start="0,0"
+              End="-138.953844601833,52.0538446465363">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7769223232681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.7769223232681"
+                    Point2="0,29.7769223232681"
+                    Point3="-4,29.7769223232681" />
+                  <mssgle:LineSegment
+                    End="-134.953844601833,29.7769223232681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134.953844601833,29.7769223232681"
+                    Point2="-138.953844601833,29.7769223232681"
+                    Point3="-138.953844601833,33.7769223232681" />
+                  <mssgle:LineSegment
+                    End="-138.953844601833,52.0538446465363" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimCustomer.Paths[Customer ID is not null]"
+          TopLeft="959.969222458968,191.753844365707">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-292.615384890483,23.0923062789899"
+              Start="0,0"
+              End="-292.615384890483,15.5923062789899">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.54615313949493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.54615313949493"
+                    Point2="0,11.5461531394949"
+                    Point3="-4,11.5461531394949" />
+                  <mssgle:LineSegment
+                    End="-288.615384890483,11.5461531394949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-288.615384890483,11.5461531394949"
+                    Point2="-292.615384890483,11.5461531394949"
+                    Point3="-292.615384890483,15.5461531394949" />
+                  <mssgle:LineSegment
+                    End="-292.615384890483,15.5923062789899" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-197.777340882741,16.5461531394949,102.939296875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\DimCustomer\DimCustomer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\DimCustomer\Customer_STG">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions\DimCustomer\Lookup">
     <Properties>
@@ -9421,15 +10835,49 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\DimCustomer\Customer_STG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\DimCustomer\DimCustomer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Dimensions\DimPayment">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Dimensions\DimPayment\OLE DB Command"
-          TopLeft="675.999989926815,429.999993592501" />
+          Size="199.2,41.6"
+          Id="Package\Dimensions\DimPayment\Prevent any Order ID null"
+          TopLeft="750.999988809228,239.999996423721" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Dimensions\DimPayment\Handle missing values"
+          TopLeft="813.999987870455,318.99999524653" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Dimensions\DimPayment\Sort"
+          TopLeft="483.999992787838,245.999996334314" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Dimensions\DimPayment\Lookup"
@@ -9443,23 +10891,23 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           Id="Package\Dimensions\DimPayment\DimPayment"
           TopLeft="385.999994248152,443.999993383884" />
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Dimensions\DimPayment\Sort"
-          TopLeft="483.999992787838,245.999996334314" />
+          Size="164.8,41.6"
+          Id="Package\Dimensions\DimPayment\OLE DB Command"
+          TopLeft="675.999989926815,429.999993592501" />
         <EdgeLayout
           Id="Package\Dimensions\DimPayment.Paths[Sort Output]"
-          TopLeft="534.68571118901,287.599996334314">
+          TopLeft="581.599992787838,263.799996379018">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.3882386936968"
+              EndConnector="169.39999602139,0"
               Start="0,0"
-              End="0,34.8882386936968">
+              End="161.89999602139,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8882386936968" />
+                    End="161.89999602139,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9467,6 +10915,42 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimPayment.Paths[Order id is not null]"
+          TopLeft="850.599988809228,281.599996423721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.5999990612271,37.3999988228083"
+              Start="0,0"
+              End="54.5999990612271,29.8999988228083">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6999994114041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6999994114041"
+                    Point2="0,18.6999994114041"
+                    Point3="4,18.6999994114041" />
+                  <mssgle:LineSegment
+                    End="50.5999990612271,18.6999994114041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.5999990612271,18.6999994114041"
+                    Point2="54.5999990612271,18.6999994114041"
+                    Point3="54.5999990612271,22.6999994114041" />
+                  <mssgle:LineSegment
+                    End="54.5999990612271,29.8999988228083" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.3196489068865,23.6999994114041,83.239296875,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9574,13 +11058,72 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="53.9895601162334,28.8548720291344,96.3827734375,11.609375"
+              BoundingBox="53.9895601162335,28.8548720291344,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimPayment.Paths[Derived Column Output]"
+          TopLeft="813.999987870455,339.79999524653">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-221.028558280274,10.9882397814814"
+              Start="0,0"
+              End="-213.528558280274,10.9882397814814">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-106.514279140137,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-106.514279140137,0"
+                    Point2="-110.514279140137,0"
+                    Point3="-110.514279140137,4" />
+                  <mssgle:LineSegment
+                    End="-110.514279140137,6.98823978148135" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110.514279140137,6.98823978148135"
+                    Point2="-110.514279140137,10.9882397814814"
+                    Point3="-114.514279140137,10.9882397814814" />
+                  <mssgle:LineSegment
+                    End="-213.528558280274,10.9882397814814" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\DimPayment\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPayment]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions\DimPayment\Payment_STG">
     <Properties>
@@ -9607,84 +11150,69 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\DimPayment\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimPayment]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Dimensions\DimProduct">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Dimensions\DimProduct\OLE DB Command"
-          TopLeft="874.999986961484,484.999992772937" />
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Dimensions\DimProduct\Sort"
-          TopLeft="465.999993830919,219.999996721745" />
-        <NodeLayout
           Size="139.2,41.6"
           Id="Package\Dimensions\DimProduct\Product_STG"
           TopLeft="446.999993339181,143.999997854233" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Dimensions\DimProduct\Sort"
+          TopLeft="465.999993830919,215.454542244023" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Dimensions\DimProduct\OLE DB Destination"
           TopLeft="366.999994531274,479.999992847443" />
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Dimensions\DimProduct\Conditional Split"
-          TopLeft="761.999989420176,386.999994233251" />
+          Size="173.6,41.6"
+          Id="Package\Dimensions\DimProduct\Prevent any null IDs"
+          TopLeft="875.272716516798,139.272725620053" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Dimensions\DimProduct\Lookup"
           TopLeft="481.107136447743,320.571423794542" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Dimensions\DimProduct\Conditional Split"
+          TopLeft="761.999989420176,386.999994233251" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Dimensions\DimProduct\Handle missing values"
+          TopLeft="835.999988918955,249.090905379165" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Dimensions\DimProduct\OLE DB Command"
+          TopLeft="874.999986961484,484.999992772937" />
         <EdgeLayout
           Id="Package\Dimensions\DimProduct.Paths[Sort Output]"
-          TopLeft="514.799993830919,261.599996721745">
+          TopLeft="529.733327164252,215.454542244023">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.7071426168243,58.971427072797"
+              EndConnector="432.339389352546,-34.58181662397"
               Start="0,0"
-              End="22.7071426168243,51.471427072797">
+              End="432.339389352546,-27.08181662397">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.4857135363985" />
+                    End="0,-10.1673893911103" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.4857135363985"
-                    Point2="0,29.4857135363985"
-                    Point3="4,29.4857135363985" />
+                    Point1="0,-10.1673893911103"
+                    Point2="0,-14.1673893911103"
+                    Point3="4,-14.1673893911103" />
                   <mssgle:LineSegment
-                    End="18.7071426168243,29.4857135363985" />
+                    End="428.339389352546,-14.1673893911103" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.7071426168243,29.4857135363985"
-                    Point2="22.7071426168243,29.4857135363985"
-                    Point3="22.7071426168243,33.4857135363985" />
+                    Point1="428.339389352546,-14.1673893911103"
+                    Point2="432.339389352546,-14.1673893911103"
+                    Point3="432.339389352546,-18.1673893911103" />
                   <mssgle:LineSegment
-                    End="22.7071426168243,51.471427072797" />
+                    End="432.339389352546,-27.08181662397" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9732,19 +11260,55 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Dimensions\DimProduct.Paths[Product ID is not null]"
+          TopLeft="989.672716516798,180.872725620053">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.4727275978435,68.2181797591123"
+              Start="0,0"
+              End="-62.4727275978435,60.7181797591123">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6610701489003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6610701489003"
+                    Point2="0,27.6610701489003"
+                    Point3="-4,27.6610701489003" />
+                  <mssgle:LineSegment
+                    End="-58.4727275978435,27.6610701489003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.4727275978435,27.6610701489003"
+                    Point2="-62.4727275978435,27.6610701489003"
+                    Point3="-62.4727275978435,31.6610701489003" />
+                  <mssgle:LineSegment
+                    End="-62.4727275978435,60.7181797591123" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.2584927051717,32.6610701489003,94.0442578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Dimensions\DimProduct.Paths[OLE DB Source Output]"
           TopLeft="515.69999358505,185.599997854233">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.3999988675117"
+              EndConnector="0,29.85454438979"
               Start="0,0"
-              End="0,26.8999988675117">
+              End="0,22.35454438979">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8999988675117" />
+                    End="0,22.35454438979" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9827,6 +11391,42 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimProduct.Paths[Derived Column Output]"
+          TopLeft="927.199988918955,290.690905379165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-389.692852471212,29.8805184153766"
+              Start="0,0"
+              End="-389.692852471212,22.3805184153766">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9402592076883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9402592076883"
+                    Point2="0,14.9402592076883"
+                    Point3="-4,14.9402592076883" />
+                  <mssgle:LineSegment
+                    End="-385.692852471212,14.9402592076883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-385.692852471212,14.9402592076883"
+                    Point2="-389.692852471212,14.9402592076883"
+                    Point3="-389.692852471212,18.9402592076883" />
+                  <mssgle:LineSegment
+                    End="-389.692852471212,22.3805184153766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -9885,87 +11485,59 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Dimensions\DimShipment\Lookup"
-          TopLeft="444.999993368983,301.999995499849" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\Dimensions\DimShipment\OLE DB Destination"
           TopLeft="427.999993622303,416.999993786216" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Dimensions\DimShipment\Shipment_STG"
+          TopLeft="410.999993875623,121.999998182058" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Dimensions\DimShipment\OLE DB Command"
           TopLeft="779.999988377095,397.999994069338" />
         <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Dimensions\DimShipment\Lookup"
+          TopLeft="444.999993368983,301.999995499849" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Dimensions\DimShipment\Ignore any missing Shipment ID"
+          TopLeft="694.999989643693,206.99999691546" />
+        <NodeLayout
           Size="97.6,41.6"
           Id="Package\Dimensions\DimShipment\Sort"
-          TopLeft="429.999993592501,211.999996840954" />
+          TopLeft="430.9999935776,190.999997153878" />
         <NodeLayout
-          Size="148,41.6"
-          Id="Package\Dimensions\DimShipment\Shipment_STG"
-          TopLeft="410.999993875623,121.999998182058" />
-        <EdgeLayout
-          Id="Package\Dimensions\DimShipment.Paths[Lookup Match Output]"
-          TopLeft="518.86666003565,343.599995499849">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="343.533328341445,54.3999985694886"
-              Start="0,0"
-              End="343.533328341445,46.8999985694886">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.2165029122946" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.2165029122946"
-                    Point2="0,22.2165029122946"
-                    Point3="4,22.2165029122946" />
-                  <mssgle:LineSegment
-                    End="339.533328341445,22.2165029122946" />
-                  <mssgle:CubicBezierSegment
-                    Point1="339.533328341445,22.2165029122946"
-                    Point2="343.533328341445,22.2165029122946"
-                    Point3="343.533328341445,26.2165029122946" />
-                  <mssgle:LineSegment
-                    End="343.533328341445,46.8999985694886" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="123.575277451972,27.2165029122946,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="182.4,41.6"
+          Id="Package\Dimensions\DimShipment\Handle missing values"
+          TopLeft="790.999988213182,292.294113323711" />
         <EdgeLayout
           Id="Package\Dimensions\DimShipment.Paths[Sort Output]"
-          TopLeft="478.799993592501,253.599996840954">
+          TopLeft="528.5999935776,211.799997153878">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.5999997764825,48.3999986588955"
+              EndConnector="166.399996066093,15.999999761582"
               Start="0,0"
-              End="22.5999997764825,40.8999986588955">
+              End="158.899996066093,15.999999761582">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.1999993294478" />
+                    End="79.1999980330465,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.1999993294478"
-                    Point2="0,24.1999993294478"
-                    Point3="4,24.1999993294478" />
+                    Point1="79.1999980330465,0"
+                    Point2="83.1999980330465,0"
+                    Point3="83.1999980330465,4" />
                   <mssgle:LineSegment
-                    End="18.5999997764825,24.1999993294478" />
+                    End="83.1999980330465,11.999999761582" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.5999997764825,24.1999993294478"
-                    Point2="22.5999997764825,24.1999993294478"
-                    Point3="22.5999997764825,28.1999993294478" />
+                    Point1="83.1999980330465,11.999999761582"
+                    Point2="83.1999980330465,15.999999761582"
+                    Point3="87.1999980330465,15.999999761582" />
                   <mssgle:LineSegment
-                    End="22.5999997764825,40.8999986588955" />
+                    End="158.899996066093,15.999999761582" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9975,19 +11547,55 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dimensions\DimShipment.Paths[OLE DB Source Output]"
-          TopLeft="481.899993734062,163.599998182058">
+          Id="Package\Dimensions\DimShipment.Paths[Shipment ID is not null]"
+          TopLeft="810.199989643693,248.59999691546">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.3999986588954"
+              EndConnector="71.999998569489,43.6941164082509"
               Start="0,0"
-              End="0,40.8999986588954">
+              End="71.999998569489,36.1941164082509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.8999986588954" />
+                    End="0,17.8470582041255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8470582041255"
+                    Point2="0,21.8470582041255"
+                    Point3="4,21.8470582041255" />
+                  <mssgle:LineSegment
+                    End="67.999998569489,21.8470582041255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.999998569489,21.8470582041255"
+                    Point2="71.999998569489,21.8470582041255"
+                    Point3="71.999998569489,25.8470582041255" />
+                  <mssgle:LineSegment
+                    End="71.999998569489,36.1941164082509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.1777936840055,26.8470582041255,102.3555859375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimShipment.Paths[OLE DB Source Output]"
+          TopLeft="482.399993726611,163.599998182058">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.3999989718203"
+              Start="0,0"
+              End="0,19.8999989718203">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8999989718203" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10032,11 +11640,94 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimShipment.Paths[Lookup Match Output]"
+          TopLeft="518.86666003565,343.599995499849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="343.533328341445,54.3999985694886"
+              Start="0,0"
+              End="343.533328341445,46.8999985694886">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2165029122946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.2165029122946"
+                    Point2="0,22.2165029122946"
+                    Point3="4,22.2165029122946" />
+                  <mssgle:LineSegment
+                    End="339.533328341445,22.2165029122946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="339.533328341445,22.2165029122946"
+                    Point2="343.533328341445,22.2165029122946"
+                    Point3="343.533328341445,26.2165029122946" />
+                  <mssgle:LineSegment
+                    End="343.533328341445,46.8999985694886" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="123.575277451972,27.2165029122946,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimShipment.Paths[Derived Column Output]"
+          TopLeft="790.999988213182,313.094113323711">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-233.199994844199,9.70588217613806"
+              Start="0,0"
+              End="-225.699994844199,9.70588217613806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-112.599997422099,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112.599997422099,0"
+                    Point2="-116.599997422099,0"
+                    Point3="-116.599997422099,4" />
+                  <mssgle:LineSegment
+                    End="-116.599997422099,5.70588217613806" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.599997422099,5.70588217613806"
+                    Point2="-116.599997422099,9.70588217613806"
+                    Point3="-120.599997422099,9.70588217613806" />
+                  <mssgle:LineSegment
+                    End="-225.699994844199,9.70588217613806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions\DimShipment\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\DimShipment\Shipment_STG">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10071,106 +11762,89 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\DimShipment\Shipment_STG">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Dimensions\DimSupplier">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Dimensions\DimSupplier\Lookup"
-          TopLeft="297.142857775396,235.529411558255" />
+          Size="97.6,41.6"
+          Id="Package\Dimensions\DimSupplier\Sort"
+          TopLeft="342.857143586996,102.976470523217" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Dimensions\DimSupplier\Handle Missing Values"
+          TopLeft="483.571429600825,196.199999851865" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Dimensions\DimSupplier\OLE DB Command"
           TopLeft="437.142858073419,419.05882316209" />
         <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Dimensions\DimSupplier\DimSupplier"
-          TopLeft="214.285714741872,426.705881978916" />
+          Size="190.4,41.6"
+          Id="Package\Dimensions\DimSupplier\Prevent Supplier ID null"
+          TopLeft="592.85714411918,107.823529317253" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Dimensions\DimSupplier\Lookup"
+          TopLeft="297.142857775396,235.529411558255" />
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dimensions\DimSupplier\Supplier_STG"
           TopLeft="291.428572048946,29.0588235039406" />
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Dimensions\DimSupplier\Sort"
-          TopLeft="343.571429302802,105.270588168265" />
+          Size="135.2,41.6"
+          Id="Package\Dimensions\DimSupplier\DimSupplier"
+          TopLeft="214.285714741872,426.705881978916" />
         <EdgeLayout
-          Id="Package\Dimensions\DimSupplier.Paths[Lookup Match Output]"
-          TopLeft="371.009524442063,277.129411558255">
+          Id="Package\Dimensions\DimSupplier.Paths[Supplier ID is not null]"
+          TopLeft="688.05714411918,149.423529317253">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="148.533333631357,141.929411603835"
+              EndConnector="-112.885714518355,46.7764705346117"
               Start="0,0"
-              End="148.533333631357,134.429411603835">
+              End="-112.885714518355,39.2764705346117">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.9627806829648" />
+                    End="0,19.3882352673059" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,53.9627806829648"
-                    Point2="0,57.9627806829648"
-                    Point3="4,57.9627806829648" />
+                    Point1="0,19.3882352673059"
+                    Point2="0,23.3882352673059"
+                    Point3="-4,23.3882352673059" />
                   <mssgle:LineSegment
-                    End="144.533333631357,57.9627806829648" />
+                    End="-108.885714518355,23.3882352673059" />
                   <mssgle:CubicBezierSegment
-                    Point1="144.533333631357,57.9627806829648"
-                    Point2="148.533333631357,57.9627806829648"
-                    Point3="148.533333631357,61.9627806829648" />
+                    Point1="-108.885714518355,23.3882352673059"
+                    Point2="-112.885714518355,23.3882352673059"
+                    Point3="-112.885714518355,27.3882352673059" />
                   <mssgle:LineSegment
-                    End="148.533333631357,134.429411603835" />
+                    End="-112.885714518355,39.2764705346117" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="26.0752800969285,62.9627806829648,96.3827734375,11.609375"
+              BoundingBox="-104.670650227927,28.3882352673059,96.4555859375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimensions\DimSupplier.Paths[Sort Output]"
-          TopLeft="392.371429302802,146.870588168265">
+          TopLeft="440.457143586996,126.199999920235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-38.8285715274059,88.6588233899903"
+              EndConnector="152.400000532184,0"
               Start="0,0"
-              End="-38.8285715274059,81.1588233899903">
+              End="144.900000532184,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.3294116949952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,40.3294116949952"
-                    Point2="0,44.3294116949952"
-                    Point3="-4,44.3294116949952" />
-                  <mssgle:LineSegment
-                    End="-34.8285715274059,44.3294116949952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-34.8285715274059,44.3294116949952"
-                    Point2="-38.8285715274059,44.3294116949952"
-                    Point3="-38.8285715274059,48.3294116949952" />
-                  <mssgle:LineSegment
-                    End="-38.8285715274059,81.1588233899903" />
+                    End="144.900000532184,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10187,26 +11861,26 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.1428572538559,34.6117646643241"
+              EndConnector="29.4285715380498,32.3176470192764"
               Start="0,0"
-              End="30.1428572538559,27.1117646643241">
+              End="29.4285715380498,24.8176470192764">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.305882332162" />
+                    End="0,12.1588235096382" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.305882332162"
-                    Point2="0,17.305882332162"
-                    Point3="4,17.305882332162" />
+                    Point1="0,12.1588235096382"
+                    Point2="0,16.1588235096382"
+                    Point3="4,16.1588235096382" />
                   <mssgle:LineSegment
-                    End="26.1428572538559,17.305882332162" />
+                    End="25.4285715380498,16.1588235096382" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.1428572538559,17.305882332162"
-                    Point2="30.1428572538559,17.305882332162"
-                    Point3="30.1428572538559,21.305882332162" />
+                    Point1="25.4285715380498,16.1588235096382"
+                    Point2="29.4285715380498,16.1588235096382"
+                    Point3="29.4285715380498,20.1588235096382" />
                   <mssgle:LineSegment
-                    End="30.1428572538559,27.1117646643241" />
+                    End="29.4285715380498,24.8176470192764" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10250,6 +11924,78 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-82.9016249021786,66.0857753326336,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimSupplier.Paths[Lookup Match Output]"
+          TopLeft="371.009524442063,277.129411558255">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="148.533333631357,141.929411603835"
+              Start="0,0"
+              End="148.533333631357,134.429411603835">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.9627806829648" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.9627806829648"
+                    Point2="0,57.9627806829648"
+                    Point3="4,57.9627806829648" />
+                  <mssgle:LineSegment
+                    End="144.533333631357,57.9627806829648" />
+                  <mssgle:CubicBezierSegment
+                    Point1="144.533333631357,57.9627806829648"
+                    Point2="148.533333631357,57.9627806829648"
+                    Point3="148.533333631357,61.9627806829648" />
+                  <mssgle:LineSegment
+                    End="148.533333631357,134.429411603835" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.0752800969285,62.9627806829648,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensions\DimSupplier.Paths[Derived Column Output]"
+          TopLeft="483.571429600825,216.999999851865">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.6285718254291,39.3294117063901"
+              Start="0,0"
+              End="-66.1285718254291,39.3294117063901">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-32.8142859127146,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.8142859127146,0"
+                    Point2="-36.8142859127146,0"
+                    Point3="-36.8142859127146,4" />
+                  <mssgle:LineSegment
+                    End="-36.8142859127146,35.3294117063901" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.8142859127146,35.3294117063901"
+                    Point2="-36.8142859127146,39.3294117063901"
+                    Point3="-40.8142859127146,39.3294117063901" />
+                  <mssgle:LineSegment
+                    End="-66.1285718254291,39.3294117063901" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10311,21 +12057,25 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Fact tables\FactReview\OnlineShop_STG"
-          TopLeft="312.142857807327,123.117646950906" />
-        <NodeLayout
           Size="146.4,41.6"
           Id="Package\Fact tables\FactReview\LKP_Customer"
           TopLeft="321.428572112808,194.999999829075" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Fact tables\FactReview\LKP_Product"
+          TopLeft="322.857143544421,265.352940943879" />
         <NodeLayout
           Size="124,41.6"
           Id="Package\Fact tables\FactReview\LKP_Date"
           TopLeft="332.142857849902,337.235293822047" />
         <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\Fact tables\FactReview\LKP_Product"
-          TopLeft="322.857143544421,265.352940943879" />
+          Size="156.8,41.6"
+          Id="Package\Fact tables\FactReview\OnlineShop_STG"
+          TopLeft="312.142857807327,123.117646950906" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Fact tables\FactReview\FactReview"
+          TopLeft="321.428572112808,439.705881967522" />
         <EdgeLayout
           Id="Package\Fact tables\FactReview.Paths[OLE DB Source Output]"
           TopLeft="392.585714960068,164.717646950906">
@@ -10349,26 +12099,26 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output]"
-          TopLeft="393.142857828615,236.599999829075">
+          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output2]"
+          TopLeft="390.585714981355,378.835293822047">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529411148035"
+              EndConnector="0,60.8705881454746"
               Start="0,0"
-              End="0,21.2529411148035">
+              End="0,53.3705881454746">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2529411148035" />
+                    End="0,53.3705881454746" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.82178305740176,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,20.8806065727373,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10392,35 +12142,31 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.58648893908438,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,5.5864889390844,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Fact tables\FactReview\FactReview"
-          TopLeft="321.428572112808,439.705881967522" />
         <EdgeLayout
-          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output2]"
-          TopLeft="390.585714981355,378.835293822047">
+          Id="Package\Fact tables\FactReview.Paths[Lookup Match Output]"
+          TopLeft="393.142857828615,236.599999829075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.8705881454746"
+              EndConnector="0,28.7529411148035"
               Start="0,0"
-              End="0,53.3705881454746">
+              End="0,21.2529411148035">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.3705881454746" />
+                    End="0,21.2529411148035" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.8806065727373,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,4.82178305740175,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10712,7 +12458,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.64531191885473,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,8.64531191885475,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10808,7 +12554,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -10818,7 +12564,7 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10890,6 +12636,26 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Fact tables\FactShipment\OnlineShop_STG"
+          TopLeft="425.999993652105,75.9999988675118" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Fact tables\FactShipment\LKP_DeliveryDate"
+          TopLeft="431.999993562698,370.999994471669" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Fact tables\FactShipment\LKP_ShipmentDate"
+          TopLeft="431.999993562698,304.999995455146" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Fact tables\FactShipment\Data Conversion"
+          TopLeft="428.999993607402,441.999993413686" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Fact tables\FactShipment\FactShipment"
+          TopLeft="442.999993398786,679.599990552664" />
+        <NodeLayout
           Size="146.4,41.6"
           Id="Package\Fact tables\FactShipment\LKP_Customer"
           TopLeft="436.999993488193,147.999997794628" />
@@ -10898,25 +12664,13 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           Id="Package\Fact tables\FactShipment\LKP_JunkStatus"
           TopLeft="434.999993517995,512.999992355704" />
         <NodeLayout
-          Size="168,41.6"
-          Id="Package\Fact tables\FactShipment\LKP_ShipmentDate"
-          TopLeft="431.999993562698,304.999995455146" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Fact tables\FactShipment\LKP_DeliveryDate"
-          TopLeft="431.999993562698,370.999994471669" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Fact tables\FactShipment\Data Conversion"
-          TopLeft="428.999993607402,441.999993413686" />
+          Size="214.4,41.6"
+          Id="Package\Fact tables\FactShipment\Add Shipment Count Column"
+          TopLeft="428.999993607402,587.999991238117" />
         <NodeLayout
           Size="145.6,41.6"
           Id="Package\Fact tables\FactShipment\LKP_Shipment"
           TopLeft="437.999993473291,235.999996483326" />
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Fact tables\FactShipment\OnlineShop_STG"
-          TopLeft="425.999993652105,75.9999988675118" />
         <EdgeLayout
           Id="Package\Fact tables\FactShipment.Paths[OLE DB Source Output]"
           TopLeft="507.299993570149,117.599998867512">
@@ -10937,6 +12691,66 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact tables\FactShipment.Paths[Lookup Match Output4]"
+          TopLeft="511.399993517995,554.599992355704">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.800000089407,33.399998882413"
+              Start="0,0"
+              End="24.800000089407,25.899998882413">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.6999994412065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.6999994412065"
+                    Point2="0,16.6999994412065"
+                    Point3="4,16.6999994412065" />
+                  <mssgle:LineSegment
+                    End="20.800000089407,16.6999994412065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.800000089407,16.6999994412065"
+                    Point2="24.800000089407,16.6999994412065"
+                    Point3="24.800000089407,20.6999994412065" />
+                  <mssgle:LineSegment
+                    End="24.800000089407,25.899998882413" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.7913866740465,21.6999994412065,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact tables\FactShipment.Paths[Lookup Match Output3]"
+          TopLeft="509.69999358505,412.599994471669">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.3999989420174"
+              Start="0,0"
+              End="0,21.8999989420174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8999989420174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.1453119710087,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11012,96 +12826,6 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact tables\FactShipment.Paths[Lookup Match Output3]"
-          TopLeft="509.69999358505,412.599994471669">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.3999989420174"
-              Start="0,0"
-              End="0,21.8999989420174">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8999989420174" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.14531197100868,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact tables\FactShipment.Paths[Data Conversion Output]"
-          TopLeft="508.999993562698,483.599993413686">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.3999989420179"
-              Start="0,0"
-              End="0,21.8999989420179">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8999989420179" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="214.4,41.6"
-          Id="Package\Fact tables\FactShipment\Add Shipment Count Column"
-          TopLeft="428.999993607402,587.999991238117" />
-        <EdgeLayout
-          Id="Package\Fact tables\FactShipment.Paths[Lookup Match Output4]"
-          TopLeft="511.399993517995,554.599992355704">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.800000089407,33.399998882413"
-              Start="0,0"
-              End="24.800000089407,25.899998882413">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.6999994412065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.6999994412065"
-                    Point2="0,16.6999994412065"
-                    Point3="4,16.6999994412065" />
-                  <mssgle:LineSegment
-                    End="20.800000089407,16.6999994412065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.800000089407,16.6999994412065"
-                    Point2="24.800000089407,16.6999994412065"
-                    Point3="24.800000089407,20.6999994412065" />
-                  <mssgle:LineSegment
-                    End="24.800000089407,25.899998882413" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.7913866740465,21.6999994412065,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Fact tables\FactShipment\FactShipment"
-          TopLeft="442.999993398786,679.599990552664" />
-        <EdgeLayout
           Id="Package\Fact tables\FactShipment.Paths[Derived Column Output]"
           TopLeft="536.199993607402,629.599991238117">
           <EdgeLayout.Curve>
@@ -11127,6 +12851,28 @@ JOIN OnlineShop_STG.dbo.Order_STG    o
                     Point3="-22.0000002086163,28.9999996572732" />
                   <mssgle:LineSegment
                     End="-22.0000002086163,42.4999993145465" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact tables\FactShipment.Paths[Data Conversion Output]"
+          TopLeft="508.999993562698,483.599993413686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.3999989420179"
+              Start="0,0"
+              End="0,21.8999989420179">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8999989420179" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
